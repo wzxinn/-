@@ -1,0 +1,73 @@
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <title></title> 
+    <style type="text/css">
+#di{
+	width: 200px;height: 300px;border: 1px solid black;
+	background: red;
+}
+#d2{
+	width: 200px;height: 300px;border: 1px solid black;
+	background: green;
+}
+
+    </style>
+</head>
+<body>
+
+<script type="text/javascript">
+
+
+onload = function(){
+	/*
+	di.onclick = function(){
+		alert(1);
+		di.onclick = null;
+	}
+	*/
+	function a(){
+		alert(1);
+		di.removeEventListener('click',a);
+	}
+	di.addEventListener('click',a,false);
+}
+/*
+addEventListener('load',function(){
+	alert('han');
+},false);
+addEventListener('load',function(){
+	alert('zhang');
+},false);
+*/
+	//onload = function(){
+/*
+		di.addEventListener('click',function(){
+			alert(1);
+		},false);
+		di.addEventListener('click',function(){
+			alert(1);
+		},false);
+*/
+		/*
+		di.onclick = function(){
+			alert(1);
+		};
+		di.onclick = function(){
+			alert(1);
+		};
+		*/
+	//	alert(2);
+//	}
+/*
+	onload = function(){
+		alert(1);
+	}
+	*/
+
+</script>
+
+<div id='di'></div>
+</body>
+</html>

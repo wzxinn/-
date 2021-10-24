@@ -1,0 +1,31 @@
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <title></title> 
+</head>
+<body>
+	<script type="text/javascript">
+		function leo(node,text,color,width,height){
+			var oNode = document.createElement(node);
+			oNode.innerHTML = text;
+			oNode.style.background = color;
+			oNode.style.width = width;
+			oNode.style.height = height;
+			document.body.appendChild(oNode);
+			//var text;
+			//var text = 123
+			//var text = 20;
+			//console.log(text);
+		};
+		leo('div','我是一个div','red','400px','500px');
+		leo('span','我是第二个div','green','100px','50px');
+		//leo(123);
+		//leo('asdasd')
+		//leo();
+		//leo();
+
+
+	</script>
+</body>
+</html>

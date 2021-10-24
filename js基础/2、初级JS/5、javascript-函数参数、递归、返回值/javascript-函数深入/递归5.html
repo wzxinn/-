@@ -1,0 +1,28 @@
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <title></title> 
+</head>
+<body>
+	<script type="text/javascript">
+
+		var i = 0;
+		function leo(){
+			i++;
+			if(i%2==1){
+				document.body.style.background = 'red';
+			}
+			else{
+				document.body.style.background = 'green';
+			}
+			
+			setTimeout(leo,1000);
+		};
+		leo();
+
+
+
+	</script>
+</body>
+</html>

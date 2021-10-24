@@ -1,0 +1,31 @@
+Math.ceil 向上取整
+Math.floor 向下取整
+
+事件委托：
+就是父级把事件给子级了
+srcElement 火狐 不支持
+target     Ie  不支持
+
+不是绑定在元素上面
+
+Bom  
+实例化之前 this 就指向实例化对象
+没实例化之前 this 永远就指向window
+
+Dom 
+this 永远指向 发生事件源
+
+clientX 是鼠标点 离浏览器 左边的距离
+clientY 是鼠标点 离浏览器 上边的距离
+
+pageX ／ Y 高级浏览器用的
+ie8 － 不支持了
+
+screenX/Y 鼠标距离屏幕的距离
+MouseEvent.prototype
+
+所有的元素 都有默认事件 
+return false 可以清除默认事件
+
+setTimeout this Es5 之前都指向window
+

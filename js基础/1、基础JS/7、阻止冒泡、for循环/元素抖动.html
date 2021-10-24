@@ -1,0 +1,44 @@
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <title></title> 
+    <style type="text/css">
+    body{position: relative;}	
+
+
+    </style>
+</head>
+<body id='bodyNode'>
+	<button id='btn'>点击抖动</button>
+	akldsjlkajsdlkajlksdjlkasj
+	<img src="1.jpg">
+	<script>
+		var btn = document.getElementById('btn');
+		
+		var num = 0,timer = null;
+		
+		btn.onclick = function(){
+			clearInterval(timer);
+			timer = setInterval(function(){
+				num++;
+
+
+				document.body.style.left = Math.random() * -20 + 10 + 'px';
+				document.body.style.top = Math.random() * -20 + 10 + 'px';
+				if(num == 10){
+					clearInterval(timer);
+					num = 0;
+					document.body.style.left = 0+ 'px';
+					document.body.style.top = 0 + 'px';
+				};
+			},30);
+		};
+
+
+	</script>
+</body>
+</html>
+
+
+

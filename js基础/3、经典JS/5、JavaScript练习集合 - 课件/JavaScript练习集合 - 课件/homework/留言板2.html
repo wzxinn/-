@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+<style>
+*{ padding:0; margin:0}
+h4{ height:40px; width:600px; display:block; margin:0 auto; border-bottom:1px solid black; line-height:40px;}
+ol{ width:600px; padding:40px 0; margin:0 auto; border:1px solid black;}
+ol li{ width:600px; height:40px; font:12/40px Arial, Helvetica, sans-serif; position:relative; -list-style:none; background:#ccc; margin-top:10px;}
+ol li p{ float:left}
+ol li .p3{ position:absolute; right:0; top:-20px; display:none;}
+textarea{ width:600px; height:50px; margin:0 auto; display:block; margin-top:20px;}
+input{ width:600px; height:40px; margin:0 auto; display:block;}
+</style>
+
+</head>
+
+<body>
+<h4>留言内容</h4>
+<ol id='ul'>
+	<span id="oSpan">请输入想说的内容...</span>
+</ol>
+<textarea id="te"></textarea><br />
+<input type="button" value="发表留言" id='obt'>
+
+<script type="text/javascript">
+	
+	//var index = 0;
+	obt.onclick = function(){
+
+		var val = te.value;
+		if(!val){
+			alert('请输入内容');
+			return;
+		};
+		var oLi = document.createElement('li');
+		oLi.innerHTML =val+'<p class="p3">您确认要删除'+val+'么?</p>';
+		oSpan.style.display = 'none';
+		ul.appendChild(oLi);
+		te.value = '';
+		oLi.onmouseover = function(){
+			this.getElementsByTagName('p')[0].style.display = 'block';
+		};
+		oLi.onmouseout = function(){
+			this.getElementsByTagName('p')[0].style.display = 'none';
+		};
+		oLi.onclick = function(){
+			this.parentNode.removeChild(this);
+
+			//alert(this.parentNode)
+			if(ul.getElementsByTagName('li').length == 0){
+				oSpan.style.display = 'block';
+			}
+			//!this.parentNode.getElementsByTagName('li').length && (oSpan.style.display = 'block');
+		}
+	}
+</script>
+</body>
+</html>

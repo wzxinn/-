@@ -1,0 +1,49 @@
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <title></title> 
+</head>
+<body>
+<script type="text/javascript">
+	/*
+	1.JSON -> 对象 
+	key->value  键值队
+	key 双引号
+	var json = {
+		"a":10
+	};
+	*/
+//Json实际上是所写的，原本是  new Object();
+	var json = new Object();
+	json.a = 10;
+	console.log(json)
+//JSON的解析方式 parsse和stringify
+	console.log(JSON);
+//JSON-parse  字符串转json，string的格式必须是正确的
+	var string = '{"a":10,"b":20,"c":30}';
+	console.log(JSON.parse(string))
+	/*
+		//parse有第二个参数,是一个函数
+		JSON.parse(string,function(key,value){
+			console.log(key,value);
+		})
+	*/
+//JSON-stringify json转字符串格式要求不那么严格
+	var json = {a:20,b:30,c:50,leo:'hehehehehe'};
+	console.log(JSON.stringify(json))
+	/*
+		//stringify有三个参数，（json对象，过滤函数，推进[缩进，最大10个]）
+		console.log(JSON.stringify(json,function(key,value){
+			if(value == 30){
+				return undefined;
+			}
+			else{
+				return value;
+			}
+		},1));
+	*/
+	
+</script>
+</body>
+</html>

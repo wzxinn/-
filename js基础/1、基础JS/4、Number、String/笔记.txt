@@ -1,0 +1,59 @@
+Number -> 数字
++ - * / % > < 
+
+< > >= <= == 只会返回布尔值
+| & 位运算 比加减运算级别还低的
+
+带小数点的计算会有bug
+
+
+String -> 字符串
+string 加上 任何数据都是string
+除了 + 其余的都会把自己变成数字
+如果算不开了 那么最后就是
+nan = not a number
+字符串有下标 可以返回下表数字上的内容
+'abc'[0] -> 'a';
+
+substring() -> 字符串剪切
+第一个参数 从第几位开始剪 
+如果只有一个参数 那么就从第几位剪到尾巴
+
+第二个参数 剪到第几位
+
+charAt() 下标
+
+toUpperCase(); 变成大写
+toLowerCase(); 变成小写
+
+concat 字符串拼接
+
+replace 字符串替换
+两个参数 第一个参数 是要替换的内容 第二个参数是替换的内容
+
+indexOf() 查找
+查找的内容
+如果找到了 就是返回第几位
+没找到就是 -1
+Boolean -> 布尔值
+
+true = 1
+false = 0
+
+undefined -> 未定义
+
+函数有默认的返回值 就是undefined
+有个东西 但是没定义就是undefined
+
+null  -> 空
+从内存里面给清楚了
+
+Object -> 对象
+	Array -> 数组
+	Json -> 对象
+	function -> 对象
+
+https://study.163.com/course/courseMain.htm?courseId=1004570016
+
+
+

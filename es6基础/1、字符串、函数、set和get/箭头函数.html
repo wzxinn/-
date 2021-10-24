@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+
+<body>
+
+	<script type="text/javascript">
+	//箭头函数最基本的形式，需要注意的是 箭头函数不会在预解析的时候提升。
+		/*
+		x = x => x;
+		x(1);
+		*/
+		//结构是 函数名=参数=>返回值或者需要执行的内容。
+		/*
+		var x = function(x){
+			return x;
+		};
+		x(1)
+		*/
+
+	//利用箭头函数实现点击文档时改变body颜色
+	//doucument.onclick和document['onclick']都可以表示文档被点击时
+		/*
+		document['onclick'] = () => {
+			document.body.style.background = 'black';
+		}
+		*/
+
+		/*
+		document.onclick = function(){
+			document.body.style.background = 'black';
+		}
+		*/
+	//箭头函数的常规用法
+		/*
+		show = () =>{
+			console.log(1);
+			document.body.style.background ='black';
+			};
+		show``;
+		*/
+	</script>
+</body>
+
+</html>

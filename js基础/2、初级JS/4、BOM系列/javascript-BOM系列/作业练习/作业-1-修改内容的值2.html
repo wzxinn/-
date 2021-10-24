@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>修改文本框的值</title>
+    <style>
+                html, body, div, ul {
+            margin: 0;
+            padding: 0;
+        }
+        div {
+            width: 569px;
+        }
+        h2 {
+            background: #6BA542;
+            color: white;
+            font-size: 16px;
+            line-height: 30px;
+            font-weight: bold;
+            vertical-align: middle;
+            text-indent: 20px;
+            margin: 0;
+        }
+        li {
+            text-decoration: none;
+            border-bottom: 1px solid #eee;
+            line-height: 40px;
+        }
+        li p {
+            display: inline-block;
+            text-indent: 20px;
+            padding-right: 5px;
+            font-size: 16px;
+            color: gray;
+            line-height: 40px;
+            margin: 0;
+        }
+        li span {
+            color: #6BA542;
+            font-size: 16px;
+            font-weight: bold;
+            padding: 0 3px;
+            cursor: pointer;
+        }
+        img {
+            width: 16px;
+            height: 16px;
+            cursor: pointer;
+        }
+        input {
+            margin-left: 16px;
+            line-height: 22px;
+            vertical-align: middle;
+            font-size: 16px;
+            padding: 0 2px;
+        }
+        .hide {
+            display: none;
+        }
+    </style>
+
+</head>
+<body>
+    <div>
+        <h2>分类名称</h2>
+        <ul>
+            <li>
+                <p>李游老师在线课堂</p>
+                <img src="pen.png" alt="pen">
+                <input type="text" value="" />
+                <span class='save'>保存</span>
+                <span class='cancel'>取消</span>
+            </li>
+            <li>
+                <p>李游老师在线课堂</p>
+                <img src="pen.png" alt="pen">
+                <input type="text" value="" />
+                <span class='save'>保存</span>
+                <span class='cancel'>取消</span>
+            </li>
+        </ul>
+    </div>
+    <script type="text/javascript">
+        var allInput = document.getElementsByTagName('input');
+        var allSpan  = document.getElementsByTagName('span');
+        var allImage = document.getElementsByTagName('img');
+        var allP     = document.getElementsByTagName('p');
+        var allSave  = document.getElementsByClassName('save');
+        var allCancel  = document.getElementsByClassName('cancel');
+        for(var i = 0;i < allInput.length; i++){
+            allInput[i].classList.add('hide');
+        };
+
+        for(var i = 0;i < allSpan.length; i++){
+            allSpan[i].classList.add('hide');
+        };
+
+
+        /*给予点击事件*/
+
+        for(var i = 0;i < allImage.length; i++){
+            allImage[i].onclick = function(){
+                this.classList.add('hide');
+                this.parentNode.children[0].classList.add('hide');
+                this.parentNode.children[2].classList.remove('hide');
+                this.parentNode.children[3].classList.remove('hide');
+                this.parentNode.children[4].classList.remove('hide');
+
+                this.parentNode.children[2].value = this.parentNode.children[0].innerHTML;
+            };
+        };
+
+        for(var i = 0;i < allSave.length;i++){
+            allSave[i].onclick = function(){
+                this.classList.add('hide');
+                this.parentNode.children[4].classList.add('hide');
+                this.parentNode.children[2].classList.add('hide');
+
+                this.parentNode.children[0].innerHTML = this.parentNode.children[2].value;
+                this.parentNode.children[0].classList.remove('hide');
+                this.parentNode.children[1].classList.remove('hide');
+
+
+            };
+        }
+
+
+        for(var i = 0; i < allCancel.length; i++){
+            allCancel[i].onclick = function(){
+                this.classList.add('hide');
+                this.parentNode.children[3].classList.add('hide');
+                this.parentNode.children[2].classList.add('hide');
+
+                //this.parentNode.children[0].innerHTML = this.parentNode.children[2].value;
+                this.parentNode.children[0].classList.remove('hide');
+                this.parentNode.children[1].classList.remove('hide');
+
+
+            };
+        }
+
+
+
+    </script>
+</body>
+</html>

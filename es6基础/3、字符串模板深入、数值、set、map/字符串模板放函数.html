@@ -1,0 +1,40 @@
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <title></title> 
+</head>
+<body>
+<script type="text/javascript">
+/*
+	1.模版里面可以里面放入函数及传参 
+	2.模板里可以放json
+*/
+
+	/*
+		function show(n){
+		var json = {f:20,k:30}
+		return json;
+		};
+		var string = `show的return是 ${show().f}`
+		console.log(string)
+	*/
+	/*
+		var a = 10;
+		var json = {
+			f:20
+		}
+		var string = `abc${a}${json.f}`;
+		console.log(string);
+	*/
+
+	function show(n){
+		
+		return n++ ;
+		};
+	var string = `show的return是 ${show(5)}`
+	console.log(string)
+	
+</script>
+</body>
+</html>

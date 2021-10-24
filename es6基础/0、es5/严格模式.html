@@ -1,0 +1,59 @@
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <title></title> 
+</head>
+<body>
+<script type="text/javascript">
+    /*
+        严格模式
+        1.消除了一堆js上的静默错误，通过改变它们来抛出错误。
+        2.严格模式修复了js引擎执行优化的错误。严格模式可以让js运行速度更快。
+        3.严格模式兼容了es的未来的版本可能会定义的一些语言。
+        ie8以前不兼容
+        简单来说就是让js容错率变低，但让js运行速度更快。
+        只有在'use strict';之后的代码段才会是严格模式，在它之前的是不管的
+    */
+'use strict';
+
+
+//严格模式下不能给window赋值
+    /*
+        1.不var 的变量不认为是全局的。
+        2.严格会引起静默失效 。 
+        像一些永恒的变量 是不允许赋值的 例如：window、top、NaN
+            错误示范
+            window=1;
+            NaN = 1;
+            top = 1;//top也是指向window的
+            
+        3.试图删除不可删除的属性也会报错。(在非严格模式下不会生效，但是不会报错);
+        4.属性更规整了，不允许出现不规整的属性赋值.
+        false.true = 1;
+        (222).kkkk = 1;
+        'width'.height = 10;
+        5. 增加了一些关键字 eval 、 arguments不允许赋值
+        6.函数内的正确的参数使用
+        7.arguments，eval不允许赋值
+        eval可以执行内部的字符串代码
+    */
+
+        let a = 10;
+        //alert(a);
+        
+        var json = {leo:20};
+        //设置不可写
+        Object.preventExtensions(json);
+        // json.mmm = 30;
+        console.log(json)
+
+
+        function leo(a,c){
+            'use strict';
+            console.log(a+c);
+        };
+        leo(2,3);
+</script>
+</body>
+</html>

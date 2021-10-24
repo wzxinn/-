@@ -1,0 +1,86 @@
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <title></title> 
+</head>
+<script type="text/javascript">
+	window.onload = function(){
+		var timer = null;
+		var a = new Date();
+		
+		var year = a.getFullYear();
+		var Month = toDob(a.getMonth() + 1)
+		var date = toDob(a.getDate());
+		var day = dayToday(a.getDay())
+
+		var Hours = toDob(a.getHours());
+		var Min = toDob(a.getMinutes());
+		var Sen = toDob(a.getSeconds());
+
+		clearInterval(timer);
+		timer = setInterval(function(){
+			var a = new Date();
+			var year = a.getFullYear();
+			var Month = toDob(a.getMonth() + 1)
+			var date = toDob(a.getDate());
+			var day = dayToday(a.getDay())
+
+			var Hours = toDob(a.getHours());
+			var Min = toDob(a.getMinutes());
+			var Sen = toDob(a.getSeconds());
+			sad.innerHTML = '现在的时间是'+year+'年'+ Month+'月'+date+'日'+Hours+':'+Min+':'+Sen+'   星期'+day;
+		},1000);
+
+		//alert(toDob(2))
+		function toDob(num){
+			if(num<10 && num>=0){
+				return '0'+num
+			}
+			else{
+				return num;
+			}
+
+		}
+		function dayToday(s){
+			var day = s;
+			switch(day){
+				case 1 :
+				day = '一';
+				break;
+				case 2 :
+				day = '二';
+				break;
+				case 3 :
+				day = '三';
+				break;
+				case 4 :
+				day = '四';
+				break;
+				case 5 :
+				day = '五';
+				break;
+				case 6 :
+				day = '六';
+				break;
+				case 0 :
+				day = '日';
+				break;
+
+			};
+			return day;
+
+		}
+
+
+		sad.innerHTML = '现在的时间是'+year+'年'+ Month+'月'+date+'日'+Hours+':'+Min+':'+Sen+'   星期'+day;
+	}
+</script>
+
+<body>
+
+<div id='sad' class='asda' lll='1'>
+	
+</div>
+</body>
+</html>

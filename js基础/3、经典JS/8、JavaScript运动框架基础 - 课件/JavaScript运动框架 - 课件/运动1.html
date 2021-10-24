@@ -1,0 +1,30 @@
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <title></title> 
+    <style type="text/css">
+*{margin: 0;padding: 0;list-style: none;}
+#div1{width: 100px;height: 100px;
+background: red;position: absolute;left: 0;top: 0;
+}
+    
+
+    </style>
+</head>
+<body>
+<div id='div1'></div>
+<script type="text/javascript">
+	var w = 100;
+	function move(){
+		w++;
+		div1.style.width = w+'px';
+	}
+	move();
+
+	onclick = move;
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+es6入门
+es2015 
+es1 - es6
+es4x
+es1 - es3
+es5 
+es6
+
+1.声明方式 - let ／ const
+let - 变量不允许重复声明  允许重复赋值 可以防治变量泄露
+const - 常量 变量不允许重复声明，也不允许重复赋值
+
+php java - 常量
+变量 随时可以变
+常量 你一旦定义了 那么就不能改变了
+
+var wang_time= null
+var time = null;//wangkai
+document.onclick = function(){time = set..}
+var time = function(){}//zenghuijie
+
+
+charCodeAt 获取编码
+String.fromCharCode(编码) 能让编码转成字符
+
+\u4e00 - \u9fa5
+
+repeat 接受1个参数 参数就是重复几次咱们的字符串
+includes 有点像indexOf
+查找会返回 布尔值
+第一个参数 是要找的内容
+第二个参数 从第几位开始
+
+startsWith 起始
+开头如果是你放入的第一个参数 就是true 不是就false
+第二个参数 从第几位开始
+
+endsWith 结束位置
+第二个参数 从第几位结束
+
+es6的字符串 变成了 ``  1左边那个玩意
+${} 模版
+
+find 第一个参数 循环出来 数组所有的内容
+	  第二个参数 循环出来 下标
+		第三个参数 循环出来 数组本身
+
+x = x => x;
+x = (x,y,z) => {
+	console.log(1)
+} 
+
+var x = function(x){
+	return x;
+};
+
+延展参数 可以延展任何类型 array  string number json
+延展参数 如果我传了 参数 那么 就执行我的参数 如果我没传参数 那么 参数就为我延展的值
+
+扩展运算符 函数中的参数用 …x
+代表 实参为数组 进来的 x变量
+在数组中可以起到合并数组的作用
+
+生成器函数
+function* 函数名(){
+}
+
+函数名.next();
+yield 有点类似于return
+
+{}可以有个set 和 get 方法
+
+方法后 放名字 
+如果执行 这个名字 不赋值的情况下 会走 get
+如果赋值 就执行 set 只最高支持一个参数
+
+
+2.字符串
+	1.fromCharCode / charCodeAt
+	2.repeat
+	3.includes
+	4.startsWith
+   5.endsWith
+2.1 模版
+{}
+
+
+2.2 数组方法 find
+
+3.函数 
+3.1箭头函数 
+3.2延展参数 
+3.3扩展运算符 …
+	- 数组合并 
+	- 【…元素选择】
+   	-  参数规范
+
+demo:es6-简易选项卡
+
+
+4.生成器函数
+4.1 yield
+
+对象中的  set 
+		   get
+

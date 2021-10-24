@@ -1,0 +1,52 @@
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <title></title> 
+    <style type="text/css">
+    	.div{width: 200px;height: 200px;background: black;float: left;margin: 100px;}
+    	.div1{width: 250px;height: 250px;background: black;float: left;margin: 100px;}
+
+
+    </style>
+</head>
+<body>
+	<script type="text/javascript">
+		/*
+		div.onclick = function(){
+			alert(1);
+		};
+		*/
+
+		document.documentElement.onclick = function(){
+			//alert(1);
+			//console.log(event.target);
+			//console.log(event.target.nodeName)
+			if(event.target.className == 'div1'){
+				event.target.style.background = 'red';
+			}
+			else if(event.target.className == 'div'){
+				event.target.style.background = 'green';
+			}
+		};
+
+
+
+		for(var i = 0;i < 10;i++){
+			var oDiv = document.createElement('div');
+			if(i<5){
+				oDiv.className = 'div';
+			}
+			else{
+				oDiv.className = 'div1';
+			}
+			
+			document.body.appendChild(oDiv);
+		};
+		
+
+
+
+	</script>
+</body>
+</html>

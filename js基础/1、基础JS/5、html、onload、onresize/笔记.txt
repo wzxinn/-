@@ -1,0 +1,52 @@
+html 就是各种各样有自己含义的标签
+
+有一种就是 有 闭合
+<xxx></xxx> 
+有一种就是没有闭合的
+<xxxx>
+
+<div></div>
+
+div + css
+
+
+onload = > 整个页面加载完之后
+
+JS -> 选取html元素 -> 改动css样式
+
+事件 交互的一种
+键盘 - 鼠标  ...
+
+JS 就跟中文一样
+读起来的话 . 的 函数 就是要做的事
+
+if(条件成功 == true/自动换算成布尔值){
+	执行内容
+}
+else{
+	没成功的执行的内容
+}
+
+id -> document.getElementById('id');
+
+tagName -> 标签名 复数
+
+document.getElementsByTagName('tagname');
+
+
+class -> 类
+document.getElementsByClassName('className');
+
+cssText -> 可以像css样式 那样的去写代码
+
+innerHTML 可以帮助咱们去改变 html 里面的内容 
+
+
+className 可以返回元素标签上的class的内容
+
+onmouseover -> 鼠标移入
+onmouseout -> 鼠标移出
+
+window.onresize  => 浏览器大小发生改变时
+
+

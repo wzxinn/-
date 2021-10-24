@@ -1,0 +1,33 @@
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <title></title> 
+</head>
+<body>
+	<div id='div1'></div>
+	<script type="text/javascript">
+
+		setInterval(function(){
+			var l = screenX, t = screenY,b = screen.height - (outerHeight + t),r = screen.width - (outerWidth + l)
+			div1.innerHTML = '浏览器距离左边的像素为' + l + ',浏览器距离上面的像素为' + t +',浏览器距离下边的像素为' + b +',浏览器距离右面的像素为' + r;
+		},0);
+		
+		/*
+		   及时显示浏览器距离左边 上面 右边 和下面的距离
+
+		   screenX/left
+		   screenY/top
+
+		   sceen.height 
+		   /window.outerHeight
+
+		   下面的距离 
+		   bottom = screen.height - (window.outerHeight + screenY)
+
+		   right = screen.width - (window.outerWidth + screenX)
+
+		*/
+	</script>
+</body>
+</html>

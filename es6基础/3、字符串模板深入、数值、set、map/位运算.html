@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+</head>
+
+<body>
+    <script type="text/javascript">
+    /*
+        位运算优先级没有普通的算术运算符高
+    */
+        //   1   2   4   8   16   32
+        //19 1   1   0   0    1    0
+        //33 1   0   0   0    0    1     
+        //   1   0   0   0    0    0      
+        //   1
+        console.log(19 & 33);
+        //   1   2   4   8   16   32
+        //19 1   1   0   0    1    0
+        //33 1   0   0   0    0    1     
+        //   1   1   0   0    1    1         
+        //   51
+        console.log(19 | 33);
+
+    </script>
+</body>
+
+</html>

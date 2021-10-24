@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+body{width:100%;height:100%;}
+*{margin:0 auto;padding:0;}
+#box{width:405px;height:470px;text-align:center;position:relative;}
+#div2{width:300px;height:30px;left:55px;top:465px;position:absolute;}
+#div1{ width:230px; height:372px;overflow:auto; position:absolute; left:90px;top:100px;} 
+#div2 img{ width:24px; height:28px; float:left; margin-top:2px; margin-left:35px;}
+#text1{width:150px;height:25px;float:left;margin-top:3px; margin-left:10px; border-radius:5px 5px 5px 5px;}
+#btn{float:left;height:25px;margin-top:3px; margin-left:3px;}
+p{ position:relative; margin:0 0 5px 0;word-wrap:break-word; overflow:hidden;}
+p img{ position:absolute; top:0;}
+.left{height:28px; padding-left:30px;}
+.right{height:28px; padding-right:30px;}
+.left img{ left:0;}
+.right img{width:24px;height:28px;right:0;}
+.left span{ display:block;height:30px; float:left; padding:5px; background:#ded6e7;}
+.right span{ display:block;height:30px;  float:right; padding:5px;background:#21c618;}
+</style>
+</head>
+
+<body>
+<div id="box">
+        <img src="images/tu1.jpg">
+        <div id="div1">
+        </div>
+        <div id="div2">
+        <img src="images/123.png" alt="" id="img1">
+        <input type="text" name="" id="text1">
+        <input type="button" value="发送" id="btn">
+       </div>
+</div>
+ <script>
+      var oDiv = document.getElementById('div1');
+      var oImg1 = document.getElementById('img1');
+      var oText = document.getElementById('text1');
+      var oBtn = document.getElementById('btn');
+      var kai = true;
+          oImg1.onclick = function(){
+             if(kai){
+                 oImg1.src = 'images/456.png';
+             }else{
+                 oImg1.src = 'images/123.png';
+             }
+              kai = !kai;
+            };
+            oBtn.onclick = function(){
+                var zuoyou ='left';
+                if(kai){
+                    zuoyou ='left';
+                }else{
+                    zuoyou ='right';
+                }
+                oDiv.innerHTML ='<p class=" '+zuoyou+' ">' + '<img src=" '+oImg1.src+' ">'+'<span>' +'说:'+oText.value+ '</span>' +'</p>' + oDiv.innerHTML;
+                oText.value = '';                
+            };
+  
+ </script> 
+</body>
+</html>

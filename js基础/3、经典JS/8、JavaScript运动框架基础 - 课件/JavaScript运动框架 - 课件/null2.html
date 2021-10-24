@@ -1,0 +1,35 @@
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <title></title> 
+</head>
+<body>
+<script type="text/javascript">
+	
+a = document.body;
+//alert(a.wangyuechao);
+var b = 0;
+	clearInterval(a.timer);
+	a.timer = setInterval(function(){
+		if(b==10){
+			clearInterval(a.timer);
+			b = 0;
+			clearInterval(a.timer);
+			a.timer = setInterval(function(){
+				if(b==10){
+					clearInterval(a.timer);
+					return;
+				}
+				b++;
+				console.log(1);
+			},30);
+			return;
+		}
+		b++;
+		console.log(1);
+	},30);
+
+</script>
+</body>
+</html>

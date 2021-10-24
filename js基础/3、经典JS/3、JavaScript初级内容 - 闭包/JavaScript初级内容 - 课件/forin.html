@@ -1,0 +1,27 @@
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <title></title> 
+</head>
+<body>
+<script type="text/javascript">
+	onload  = function(){
+		var ipt = document.getElementsByTagName('input');
+		var arr = [ipt[0],ipt[1],ipt[2]];
+		for(var i in ipt){
+			if(i == 'length' && i == 'item' && i == 'namedItem'){
+				break;
+			}
+			else{
+				alert(i)
+
+			}
+		}
+	}
+	
+</script>
+<input><input><input>
+
+</body>
+</html>

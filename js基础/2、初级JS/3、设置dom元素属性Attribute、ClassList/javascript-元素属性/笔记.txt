@@ -1,0 +1,32 @@
+dom元素 一些普通常见的属性 是可以直接获取 或者 设置的
+例如 id class type href src
+
+自定义的属性 必须使用 attribute
+
+setAttribute(属性，属性值);
+就可以显示在页面的元素上面了
+
+只想挂属性不挂值 setAttribute(属性，"");
+
+删除元素上的属性
+removeAttribute(属性);
+
+获取元素上的属性
+getAttribute(属性);
+
+判断元素上的属性
+hasAttribute(属性);
+
+如果有的情况下 就返回一个true
+没有的情况下 就返回一个false
+
+className 可以返回或者设置元素的class
+
+
+classList
+
+add      添加 一个 类
+remove   删除 一个 类
+contains 判断有没有该类 如果有返回true 没有返回false
+
+toggle   切换一个类 有就删除 没有就添加

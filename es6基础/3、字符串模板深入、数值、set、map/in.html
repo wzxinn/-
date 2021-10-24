@@ -1,0 +1,37 @@
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <title></title> 
+</head>
+<body>
+<script type="text/javascript">
+/*
+    1.in
+    ‘属性’ 是否在 该对象上
+*/
+
+//console.log('alert' in window);
+window.wangyimeng = 'in my heart';
+console.log('wangyimeng' in window);
+
+/*
+    //in也可以用来判断下标是否在数组内
+    var arr = [5,6,9,4];
+    arr[0]
+    arr[1]
+    arr[2]
+    arr[3]
+    console.log(0 in arr);
+*/
+//当然也能用来判断json对象内部的东西
+var json = {
+	'leo':18,
+	'hehe':3
+};
+
+console.log('o' in json);
+
+</script>
+</body>
+</html>

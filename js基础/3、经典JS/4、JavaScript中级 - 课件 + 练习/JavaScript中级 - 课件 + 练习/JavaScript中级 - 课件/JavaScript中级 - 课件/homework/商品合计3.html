@@ -1,0 +1,82 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+</head>
+
+<body>
+
+<ul id="list">
+	<li>
+  	<input type="button" value="-" />
+    <strong>0</strong>
+  	<input type="button" value="+" />
+    单价：<em>12.5元</em>
+    小计：<span>0元</span>
+  </li>
+	<li>
+  	<input type="button" value="-" />
+    <strong>0</strong>
+  	<input type="button" value="+" />
+    单价：<em>10.5元</em>
+    小计：<span>0元</span>
+  </li>
+	<li>
+  	<input type="button" value="-" />
+    <strong>0</strong>
+  	<input type="button" value="+" />
+    单价：<em>8.5元</em>
+    小计：<span>0元</span>
+  </li>
+	<li>
+  	<input type="button" value="-" />
+    <strong>0</strong>
+  	<input type="button" value="+" />
+    单价：<em>8元</em>
+    小计：<span>0元</span>
+  </li>
+	<li>
+  	<input type="button" value="-" />
+    <strong>0</strong>
+  	<input type="button" value="+" />
+    单价：<em>14.5元</em>
+    小计：<span>0元</span>
+  </li>
+</ul>
+
+<p>
+商品合计共：0件，共花费了：0元<br />
+其中最贵的商品单价是：0元
+</p>
+
+<script type="text/javascript">
+  var allInput = list.getElementsByTagName('input');
+  for(var i = 0;i < allInput.length;i++){
+    allInput[i]['onclick'] = function(){
+      //alert(this.parentNode.children[1].innerHTML);
+      if(this.value =='+'){
+       // alert(1);
+        var needVal = this.parentNode.children[1].innerHTML;
+        needVal++;
+        this.parentNode.children[1].innerHTML = needVal;
+      }
+      else{
+        var needVal = this.parentNode.children[1].innerHTML;
+        needVal--;
+        this.parentNode.children[1].innerHTML = needVal<=-1?0:needVal;
+      }
+
+      var oSpan = this.parentNode.getElementsByTagName('span')[0];
+      var oEm = this.parentNode.getElementsByTagName('em')[0].innerHTML.replace('元','');
+      var needVal = this.parentNode.children[1].innerHTML;
+      oSpan.innerHTML = oEm * needVal + '元';
+
+
+    }
+  }
+
+</script>
+</body>
+</html>

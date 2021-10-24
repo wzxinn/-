@@ -1,0 +1,49 @@
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <title></title> 
+
+    <style type="text/css">
+.m{
+	width: 100px;height: 100px;background: black;
+}
+
+    </style>
+    <script type="text/javascript" src='jquery-1.9.1.min.js'></script>
+</head>
+<div id='div'></div>
+<body>
+<script type="text/javascript">
+
+function Jquery(obj){
+	this.ele = obj.charAt(0);
+	this.arr = [];
+	switch(this.ele){
+		case '.' :
+		break;
+		case '#' :
+		alert(1);
+		break;
+		default:
+		break;
+	}
+};
+Jquery.prototype = {
+	'addClass':function(){
+	}
+}
+
+function $(string){
+	return new Jquery(string);
+};
+
+
+$('#div').addClass();
+//#
+//.
+//标签
+
+</script>
+</body>
+</html>

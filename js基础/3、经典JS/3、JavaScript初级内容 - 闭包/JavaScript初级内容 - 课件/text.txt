@@ -1,0 +1,95 @@
+break
+所有的循环的 都能用 
+跳出循环 立即结束
+
+dom 节点 元素 
+
+innerHTML 返回dom的内容
+如果 ＝ 就是赋予dom内容
+
+outerHTML 会返回 dom本身＋自己的内容
+如果 ＝ 就是连自己也给替换了
+
+document.getElementById
+
+id元素可以直接 拿id 作为变量去用
+
+标签document.getElementsByTagName()
+class
+document.getElementsByClassName()
+name 属性name的选择器
+document.getElementsByName()
+
+cssText ie8＋
+可以以给dom元素 以css的形式去附值
+
+children 
+获取dom元素 的第一层子级
+
+parentNode
+获取dom元素 的父级节点
+
+createElement(‘标签名’)
+
+父节点.appendChild(创建的子节点)
+appendchild 插入到父级的最下面
+
+insertBefore 插入到父级的下面的子元素前面
+parentNode.insertBefore(newDom,oldDom);
+
+父节点removeChild（要删除的节点）
+replaceChild 替换元素节点
+父节点.replaceChild(newDom,oldDom);
+createTextNode 创建文本节点
+
+addEventListener 事件监听
+一但绑定 这个元素 就一直有这个事件了
+
+事件绑定的特性 一但绑定 这个元素 就一直有这个事件了
+
+removeEventListener 解除绑定
+
+函数必须有名字
+属性 
+隐式属性 js 直接赋予 但是 看不到
+只有特殊的显示属性 才能用隐式属性的方法去拿 例如 id class
+
+显式属性
+setAttribute（属性名，属性值）
+getAttribute(属性名)
+拿不到 隐式的属性
+
+hasAttribute(attr)
+if true
+else false
+
+nodeName 返回节点名称
+
+
+爸爸不能拿儿子的 
+儿子拿爸爸的
+闭包：
+
+＊子函数访问父函数
+＊一个函数访问另一个函数变量的行为
+
+回收机制 一旦用过了 就回收了
+        死了 没人用它了
+        活着 有人惦记着
+
+子函数可以使用父函数的变量
+子函数能延长父函数变量的生命周期
+子函数可以扩充空间
+
+事件冒泡
+父级的事件子级都继承
+取消冒泡防止父级的事件贯穿到子级
+参数传进来的e 不兼容ie
+event  火狐不兼容
+e = MouseEvent;
+
+cancelBubble = true  阻止事件冒泡
+stopPropagation() 
+但是他是高级浏览器 ie8+才会支持 移动端
+
+[]在js语句中可以代替任何的‘.’;

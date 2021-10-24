@@ -1,0 +1,35 @@
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <title></title> 
+    <style type="text/css">
+input.active{background: red;}
+
+    </style>
+</head>
+<body>
+
+
+
+<script type="text/javascript">
+/*
+	es6中的类不会变量提升
+*/
+	class a{
+		constructor(x,y,z){
+			//需要执行的内容
+			console.log(x,y,z);
+		}
+		//这个类的原型（方法）
+		ffff(x){
+			console.log(this.x);
+		}
+	};
+	//var c = new a()
+	new a(11,[1,2,3],{a:50}).ffff(1);
+
+
+</script>
+</body>
+</html>

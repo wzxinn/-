@@ -1,0 +1,96 @@
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <title></title>
+    <style type="text/css">
+*{margin: 0;padding: 0;list-style: none;}
+.darg{
+	width: 100px;height: 100px;background: black;position: absolute;
+}
+
+    </style> 
+</head>
+<body>
+<div class='darg'></div>
+<div class='darg'></div>
+<div class='darg'></div>
+
+<script type="text/javascript">
+	
+
+	function Darg(opt){
+		var _this = this;
+		this.opt = opt;
+		_this.classN = opt.className;
+		document.onmousedown = function(e){
+			var ev = e || event;
+			var iTarget = ev.srcElement || ev.target;
+			if(iTarget.className == _this.classN){
+				var l = ev.clientX - iTarget.offsetLeft;
+				var t = ev.clientY - iTarget.offsetTop;
+
+				document.onmousemove = function(e){
+					_this.ev = e || event;
+					_this.needL = _this.ev.clientX - l;
+					_this.needT = _this.ev.clientY - t;
+					_this.maxL = innerWidth - iTarget.offsetWidth;
+					_this.maxT = innerHeight - iTarget.offsetHeight;
+					_this.opt.unLeft && (_this.needL = _this.needL<0?0:_this.needL);
+
+					_this.opt.unTop && (_this.needT = _this.needT<0?0:_this.needT);
+
+					_this.opt.unRight && (_this.needL = _this.needL>_this.maxL?_this.maxL:_this.needL);
+
+					_this.opt.unBottom && (_this.needT = _this.needT>_this.maxT?_this.maxT:_this.needT);
+
+					iTarget.style.left = _this.needL + 'px';
+					iTarget.style.top = _this.needT + 'px';
+				}
+
+				document.onmouseup = function(){
+					document.onmousemove = document.onmouseup = null;
+				}
+				return false;
+			}
+
+
+		}
+
+
+
+
+
+			onresize= function(e){
+				var allDiv = document.getElementsByClassName(opt.className);
+
+				for(var i = 0;i < allDiv.length;i++){
+					if(innerWidth<allDiv[i].offsetLeft+allDiv[i].offsetWidth){
+						allDiv[i].style.left = innerWidth-allDiv[i].offsetWidth +'px'
+						}
+						if(innerHeight<allDiv[i].offsetTop+allDiv[i].offsetHeight){
+							allDiv[i].style.top = innerHeight-allDiv[i].offsetHeight +'px'
+						}
+
+
+					}
+
+
+				}
+				
+				
+
+
+	}
+
+	new Darg({
+		 className:'darg',
+		 unLeft:true,
+		 unTop:true,
+		 unRight:true,
+		 unBottom:true,
+		 unResize:true
+	});
+</script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <title></title> 
+    <style type="text/css">
+body,html{height: 100%;}    	
+
+    </style>
+</head>
+<body>
+	<div id='myDiv'>asdjalksjdklajskldjklasjdkljalksjdlkjaslkj</div>
+	<input type="" id='ipt' name="">
+	<script type="text/javascript">
+		
+		var myDiv = document.getElementById('myDiv');
+		var ipt = document.getElementById('ipt');
+		myDiv.onmousedown = function(){
+			return false;
+		};
+
+		oncontextmenu = function(event){
+			//alert(1);
+			console.log(event)
+			return false;
+		};
+
+		ipt.onmousedown = function(){
+			return false;
+		}
+
+
+		/*
+		var oS = document.getElementById('span');
+		*/
+
+/*
+		onmousedown = function(){
+			console.log('鼠标按下');
+		};
+		onmouseup = function(){
+			console.log('鼠标抬起');
+		};
+*/
+	</script>
+</body>
+</html>

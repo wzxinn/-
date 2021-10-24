@@ -1,0 +1,98 @@
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <title></title> 
+    <style type="text/css">
+*{margin: 0;padding: 0;list-style: none;}
+#div1{width: 100.5px;height: 100.5px;
+	-filter:alpha(opacity=30);
+background: red;position: absolute;left: 0;top: 0;
+-margin-left:20px;-padding: 20px;
+border: 0px solid black 
+}
+    
+
+    </style>
+</head>
+<body>
+<div id='div1'></div>
+<script type="text/javascript">
+
+
+	//var json =
+
+	move({
+		'obj':div1,
+		'curName':'height',
+		'iTarget':130,
+		'iSpeed':3,
+		'iTimer':30
+	},function(){
+		move({
+			'obj':div1,
+			'curName':'width',
+			'iTarget':'500',
+			'iSpeed':20,
+			'iTimer':3
+		},function(){
+			move({
+			'obj':div1,
+			'curName':'opacity',
+			'iTarget':'0',
+			'iSpeed':0.1,
+			'iTimer':10
+			})
+		})
+	});
+	function getStyle(obj,name){
+		if(obj.currentStyle){
+			return obj.currentStyle[name]
+		}else{
+			return getComputedStyle(obj,false)[name]
+		}
+	};
+
+	
+	function move(opt,fn){
+		//var t = null;
+		//console.log(obj.timer);
+		clearInterval(opt.obj.timer)
+		opt.obj.timer = setInterval(
+			function(){
+
+			//
+
+			var cur = opt.curName == 'opacity'?parseFloat(getStyle(opt.obj,opt.curName)):parseInt(getStyle(opt.obj,opt.curName));
+	//		console.log(cur);
+			//alert(cur);
+			//199.5 == 200
+			//200.5 == 200;
+			if(cur == opt.iTarget){
+			//	cur = iTarget
+				
+				
+				clearInterval(opt.obj.timer);
+				fn && fn();
+				return;
+			}
+
+			//console.log(speed)
+			cur = cur<opt.iTarget?(cur+=opt.iSpeed):(cur-=opt.iSpeed)
+
+			if(opt.curName == 'opacity'){
+				opt.obj.style[opt.curName] =cur;
+			}else{
+				opt.obj.style[opt.curName] =cur +'px';
+			}
+			
+		},opt.iTimer);
+
+
+	}
+
+
+
+</script>
+</body>
+</html>

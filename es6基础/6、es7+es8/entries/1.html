@@ -1,0 +1,30 @@
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <title></title> 
+</head>
+<body>
+	<script type="text/javascript">
+
+	/*
+		1.帮助咱们解析对象,变成一个可枚举的键值对二维数组
+		数组好循环的就叫枚举
+		他会把数组的索引值给强行加上，变成一个数组对象
+		Object.values
+		只会返回一个 数组里面是value值
+	*/
+		var json = {
+			'leo':19,
+			'sky':20
+		};
+
+		console.log(Object.entries(json));
+
+		var json = [1,2,3];
+		console.log(Object.entries(json));
+
+
+	</script>
+</body>
+</html>

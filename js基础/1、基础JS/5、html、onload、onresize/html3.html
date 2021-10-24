@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>html标签</title>
+		<style type="text/css">
+#myDiv{width: 100px;height: 100px;background: black;}		
+		</style>
+
+	</head>
+	<body>
+		<button id='btn'>显示隐藏</button>
+		<div id='myDiv'></div>
+	<script>
+		var btn = document.getElementById('btn'),
+			myDiv = document.getElementById('myDiv'),
+			num = 0;
+
+		btn.onclick = function(){
+			num = num + 1;
+			//console.log(num);
+			if(num % 2 == 1){
+				myDiv.style.display = 'none';
+			}
+			else{
+				myDiv.style.display = 'block';
+			}
+			//myDiv.style.display = 'none';
+		};
+	</script>
+	</body>
+</html>
+
+
+
+
+
+
+
+
+

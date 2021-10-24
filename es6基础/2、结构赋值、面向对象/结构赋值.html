@@ -1,0 +1,54 @@
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <title></title> 
+    <style type="text/css">
+input.active{background: red;}
+
+    </style>
+</head>
+<body>
+
+
+
+<script type="text/javascript">
+	/*结构赋值 跟后面的结构一样就可以*/
+	// eg1
+	//let [a,b,c] = [10,20,30];
+
+	// eg2
+    //var a = 10,b = 20,c = 30;
+	//let [a,[b,f],c] = [10,[20,40],30];
+
+    //eg3
+    //var json = {'a':20,'b':[30,20]};
+	//let {a,b} = json;
+
+    //eg4 
+    //function show(a=[30,50,80,100]){
+		//console.log(a);
+		/*
+		var b = a[0];
+		var c = a[1];
+		var d = a[2];
+		var e = a[3];
+		*/
+		//var [b,c,d,e] = a;
+	//};
+    /*eg5 对象的结构赋值*/
+    var obj = {
+		'ok':1,
+		'data':{
+			'top':[1,2,3],
+			'center':[2,3,4]
+		},
+		'mis':'请求成功'
+	};
+
+	let {ok,data,mis} = obj;
+    console.log({ok,data,mis}.data.top);
+
+</script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+
+<body>
+	<script type="text/javascript">
+		/*
+			1.map  用法跟find ／ findIndex 差不多
+			2.但返回的不一样 返回每次的返回值
+			3.find返回满足函数的第一个返回值，若都不满足返回undefined
+			4.findIndex返回满足函数的第一个返回值的下标，若都不满足返回-1
+			5.json中不允许存在重复的key
+			6.map -->set ／get ／ has ／ delete ／ clear。使用方法看set
+		*/
+		let arr = ['button', 'text', 'button'];
+		var a = arr.map((x, y, z) => {
+			//console.log(x,y,z)
+			var oBtn = document.createElement('input');
+			oBtn.type = x;
+			return oBtn;
+		});
+
+		console.log(a);
+		// for(let i=0;i<3;i++){
+		// 	document.body.appendChild(a[i]);
+		// }
+		/*
+			1.Map的第二种用法 new一个Map();
+		*/
+		//创建一个Map对象
+		var mapNode = new Map();
+		//定义一个json对象
+		var json = {
+			'王艺蒙': '瘦了',
+			'申瑞': '有钱了',
+			'&&&&&&&': '瘦了'
+		}
+		//使用set往map对象中插入json的数据
+		for (var i in json) {
+			mapNode.set(i, json[i]);
+		}
+		//定义一个json2空对象
+		var json2 = {}
+		//用for of循环取出 map对象里的内容，[k,v]是形式参数.k代表key，v代表value
+		for (let [k, v] of mapNode) {
+			json2[k] = v;
+		}
+		console.log(json2);
+		
+		//取出map里的东西
+		console.log(mapNode.get('王艺蒙'));
+		//map整体赋值
+		
+		const map = new Map([
+		  ['name', '张三'],
+		  ['title', 'Author']
+		]);
+		console.log(map.get('name'));
+	</script>
+</body>
+
+</html>

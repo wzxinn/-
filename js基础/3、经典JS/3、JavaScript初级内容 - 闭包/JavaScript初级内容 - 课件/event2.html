@@ -1,0 +1,35 @@
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <title></title> 
+    <style type="text/css">
+#div1{width: 100px;height: 100px;background: black;position: absolute;left: 30px;top: 50px}
+#div2{
+	width: 100px;height: 100%;
+	background: green;position: absolute;left: 200px;top: 200px;
+}
+
+    </style>
+</head>
+<body>
+<div id='div1'>
+	<div id='div2'></div>
+</div>
+<script type="text/javascript">
+	
+div1.onclick = function(e){
+	alert(1);
+
+}
+div2.onclick = function(e){
+	//console.log(event);
+	var ev = e || event;
+	ev.stopPropagation();
+	//ev.cancelBubble = true;
+}
+
+
+</script>
+</body>
+</html>

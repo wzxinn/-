@@ -1,0 +1,36 @@
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <title></title> 
+    <style type="text/css">
+input.active{background: red;}
+
+    </style>
+</head>
+<body>
+
+
+
+<script type="text/javascript">
+	
+/*
+	任何函数都可以用 .call() 调用自己 call 的第一个参数 就是 函数的this 第二个参数之后就是函数的形参
+*/
+//下面的延时定时器中,.call调用自己时，参数为(this,函数,延时)
+	setTimeout.call(window,()=>{
+		alert.call(window,1)
+	},1000);
+
+	/*
+
+	function show(x,y,z){
+		console.log(this+x);
+	}
+	show.call(1,2,3,4)
+	//show.call(this,x,y,z)
+	*/
+
+</script>
+</body>
+</html>

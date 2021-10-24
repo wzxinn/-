@@ -1,0 +1,28 @@
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <title></title> 
+</head>
+<body>
+<script type="text/javascript">
+/*
+	Object.preventExtensions()
+	1.对象不可以添加，但可以删除
+	一旦从新赋值 preventExtensions的效果失效
+*/
+var json = {
+	a:20
+};
+Object.preventExtensions(json);
+//json.b = 30;
+json = {
+	a:20,
+	b:30
+};
+//delete json.a
+console.log(json.b)
+
+</script>
+</body>
+</html>

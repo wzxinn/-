@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Untitled Document</title>
+</head>
+
+
+<body>
+<input type="text" id='ipt1'/>
+<input type="text" id='ipt2' />
+<input type="button" value="比较大小" id='btn' />
+<script type="text/javascript">
+	btn['onclick'] = function(){
+		//alert(typeof ipt1.value)
+		if(!ipt1.value || !ipt2.value){
+			alert('请不要留空')
+		}
+		else if(Number(ipt1.value) > Number(ipt2.value)){
+			alert(ipt1.value+'大')
+		}
+		else if(Number(ipt1.value) < Number(ipt2.value)){
+			alert(ipt2.value+'大')
+		}
+		else if(Number(ipt1.value) == Number(ipt2.value)){
+			alert('相等')
+		}
+		else{
+			alert('请输入正确的数字')
+		}
+
+	}
+
+</script>
+</body>
+</html>

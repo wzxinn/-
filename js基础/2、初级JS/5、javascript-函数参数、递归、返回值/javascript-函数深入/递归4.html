@@ -1,0 +1,24 @@
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <title></title> 
+</head>
+<body>
+	<script type="text/javascript">
+
+		function sky(){
+			document.body.style.background = 'yellow';
+			setTimeout(leo,1000);
+		}
+		function leo(){
+			document.body.style.background = 'red';
+			setTimeout(sky,1000);
+		};
+		leo();
+
+
+
+	</script>
+</body>
+</html>

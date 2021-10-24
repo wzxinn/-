@@ -1,0 +1,30 @@
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <title></title> 
+</head>
+<body>
+	<div id='div1'>
+		<span></span>
+		<p></p>
+		<div id='div2'>2</div>
+	</div>
+	<script type="text/javascript">
+		div2.onclick = function(){
+			alert(1);
+		};
+
+		var oSpan = document.createElement('span');
+
+		oSpan.innerHTML = '1234';
+		oSpan.onclick = function(){
+			alert(2);
+		};
+		div1.appendChild(oSpan);
+
+
+
+	</script>
+</body>
+</html>

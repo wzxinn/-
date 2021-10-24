@@ -1,0 +1,21 @@
+运动 
+Dom 操作
+说白了 就让元素的style 发生改变
+
+offsetWidth/height
+//width   o
+//margin  x
+//padding o
+//border  o
+
+clientWidth/height
+//width   o
+//margin  x
+//padding o
+//border  x
+
+对象的私有属性 就算没有也不报错
+
+stringify 转字符串的
+parse     字符串转json的
+

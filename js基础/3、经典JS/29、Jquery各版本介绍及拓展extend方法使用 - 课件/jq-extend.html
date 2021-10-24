@@ -1,0 +1,29 @@
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <title></title> 
+    <script type="text/javascript" src='jquery-1.9.1.min.js'></script>
+</head>
+<body>
+<script type="text/javascript">
+	$('body').css({
+		'width':300,
+		'height':200
+	});
+	$.extend({
+		'sunmin':function(){
+			alert(1);
+		},
+		'ssss':function(){
+			return Math.random();
+		},
+		'bodyMax':function(){
+			return {w:innerWidth,h:innerHeight}
+		}
+	});
+
+	alert($.bodyMax().h);
+</script>
+</body>
+</html>

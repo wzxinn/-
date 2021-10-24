@@ -1,0 +1,46 @@
+parseInt(要转换的数字或者其他的数据)
+
+会转换成数字 并且去掉小数点之后的内容
+
+
+事件对象 是 和当前事件有关系
+event
+
+可以找到和这个事件有关系的内容
+clientX / clientY;
+
+onmousemove = 鼠标在内容上滑动时触发的事件
+
+onmousedown = 
+鼠标按下的时候触发的事件
+
+onmouseup =
+鼠标抬起的时候触发的事件
+
+oncontextmenu = 
+鼠标右键
+
+取消默认事件
+return false
+
+onkeydown / onkeyup
+
+&& 判断条件的 和 前后条件 必须都满足
+
+事件冒泡
+
+event.cancelBubble = true; 阻止事件冒泡
+
+for 循环
+for(初始化条件;判断条件;迭代语句){
+			脚本
+		}
+
+i ++ 
+
+i = i+1
+
+
+
+
+

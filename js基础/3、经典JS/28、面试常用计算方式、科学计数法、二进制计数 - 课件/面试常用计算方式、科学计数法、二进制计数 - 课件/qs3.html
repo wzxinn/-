@@ -1,0 +1,27 @@
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <title></title> 
+</head>
+<body>
+<script type="text/javascript">
+	
+	var a = 10;
+	var b = new Number(1);
+	function show(a,b){
+		arguments[0] = 5;
+		arguments[1].b = a;
+		alert(a);//5  -> 
+		alert(b);//10 -> o  1
+
+	}
+	show(a,b);
+	alert(a);//10 
+	alert(b);//1 
+	alert(a.b);//10->  蒙的 oundefined
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <title></title> 
+</head>
+<body>
+	<script type="text/javascript">
+		function leo(arr){
+			//['div','text','color','400px','300px']
+			var oNode = document.createElement(arr[0]);
+			oNode.innerHTML = arr[1];
+			oNode.style.background = arr[2];
+			oNode.style.width = arr[3];
+			oNode.style.height = arr[4];
+			document.body.appendChild(oNode);
+			
+		};
+		leo(['p','我是一个数组','yellow','300px','500px']);
+		
+
+
+	</script>
+</body>
+</html>

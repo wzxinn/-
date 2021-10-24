@@ -1,0 +1,21 @@
+parentNode 父级元素
+children 子级元素
+
+createElement 创建元素
+appendChild 插入到该元素的子级的最后方
+insertBefore 第一个参数 是要插入的元素 第二个参数是插入到指定元素的前面
+replaceChild 替换元素 
+
+
+第一个参数 是要替换的元素  
+第二个参数 是被替换的元素
+
+removeChild
+
+只能删除子级第一层的元素
+
+remove 删除自身
+
+innerHTML  返回元素里面的内容
+如果赋值 就是先清空里面的内容 在加上新内容
+

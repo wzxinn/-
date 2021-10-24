@@ -1,0 +1,53 @@
+面向对象的机制
+1.引用机制
+2.私有属性机制
+3.只要是对象都不相等
+
+this
+dom 
+永远指向事件源
+bom
+没实例化 指向window
+实例化   指向该对象
+
+
+call／apply
+改变this的指向
+
+JSON ->就是对象
+
+里面的this 指向 的自己
+
+
+self\parent\top\this
+
+window 不能被回收
+
+top = ifream
+
+
+Symbol 不是对象
+独一无二的
+
+//(-a)-1
+alert(~-5)
+不是正常的会告诉你是 0 在计算
+
+
+科学技术法
+1e1 = 10
+1e2 = 100
+
+2e1 = 20
+3e1 = 30
+…
+
+transition
+css3 运动
+ie10+
+－webkit－
+3个值
+样式（all）
+ease/linear 
+运动轨迹可以通过chrome 自己去调试
+最后的就是时间

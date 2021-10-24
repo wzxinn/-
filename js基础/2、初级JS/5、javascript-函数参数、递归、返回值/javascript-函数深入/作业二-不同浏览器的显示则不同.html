@@ -1,0 +1,53 @@
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <title></title> 
+</head>
+<body>
+	<script type="text/javascript">
+		/*
+		   通过字符串 indexOf方法
+		   已知 indexOf 字符串方法
+
+		   如果能找到参数字符串 则 返回 相应位置 
+		   找不到 返回 - 1
+
+		   例如
+		   'abc'.indexOf('a') 返回 0  在第0个位置发现 参数'a';
+		   'abc'.indexOf('d') 返回 -1 没找到 则返回 -1
+
+		   请让 谷歌浏览器 打开页面是 红色 并且页面中 文字为 我是 谷歌
+		   请让 火狐浏览器 打开页面是 黑色 并且页面中 文字为 我是 火狐
+		   请让 IE 7浏览器 打开页面是 黄色 并且页面中 文字为 IE 7 
+		   其他浏览器 打开为 粉色 无文字显示
+
+ 
+		*/
+
+		var nv = navigator.userAgent;
+		console.log(nv);
+		if(nv.indexOf('Chrome')!=-1){
+			//console.log('这个是谷歌')
+			document.body.style.background = 'red';
+			document.body.innerHTML = '这里是谷歌';
+		}
+		else if(nv.indexOf('Firefox')!=-1){
+			document.body.style.background = 'black';
+			document.body.innerHTML = '这里是火狐';
+
+		}
+		else if(nv.indexOf('MSIE 7.0')!=-1){
+			document.body.style.background = 'yellow';
+			document.body.innerHTML = '这里是IE7';
+		}
+		else{
+			document.body.style.background = 'pink';
+		}
+		//console.log(nv)
+		//console.log('abcd'.indexOf('f'))
+
+
+	</script>
+</body>
+</html>

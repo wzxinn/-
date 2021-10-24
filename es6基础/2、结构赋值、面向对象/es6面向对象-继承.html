@@ -1,0 +1,56 @@
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <title></title> 
+    <style type="text/css">
+input.active{
+	background: red;
+}
+
+#box > div{
+	width: 200px;height: 200px;background: #ccc;
+	display: none;
+}
+#box > div:first-of-type{
+	display: block;
+}
+
+
+#ccc > div{
+	width: 200px;height: 200px;background: #ccc;
+	display: none;
+}
+#ccc > div:first-of-type{
+	display: block;
+}
+
+    </style>
+</head>
+<body>
+
+<script type="text/javascript">
+class show {
+	constructor(l) {
+		this.x = l;
+	}
+	m(){
+		alert(this.x);
+	}
+};
+ class wang extends show {
+	constructor(l){
+		super(l)
+	}
+}
+new wang(1).m();
+//new show(1).m();
+
+
+</script>
+
+
+
+
+</body>
+</html>

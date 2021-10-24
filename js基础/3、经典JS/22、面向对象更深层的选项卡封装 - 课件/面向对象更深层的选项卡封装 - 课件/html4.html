@@ -1,0 +1,202 @@
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <title></title> 
+</head>
+<style type="text/css">
+	#tabNode
+
+	{
+
+		float: left;
+	}
+	#tabNode div{
+		float: left;
+		width: 200px;height: 200px;
+		background: #ccc;
+		border: 1px solid black;display: none;
+	}
+	#tabNode span,#tabNode input{
+		background: #ccc;
+	}
+
+	#tabNode .active{
+		background: red;
+	}
+
+
+</style>
+<body>
+<script type="text/javascript">
+	
+
+
+function NewTab(opt){
+	//把opt 变成私有属性
+	this.opt = opt;
+	//alert(this.opt.isCreate);
+	this.opt.isCreate?this.CreateElement():this.unCreate();
+
+	//事件模块
+	this.eventNode();
+
+	//定时器模块
+	this.opt.isInterval && this.isInterval();
+
+};
+NewTab.prototype = {
+
+	'isInterval':function(){
+		this.t = null;
+		var _this = this;
+		this.index = 0;
+		clearInterval(this.t);
+		this.t = setInterval(function(){
+			if(_this.opt.isCreate){
+				_this.index++;
+				var o = document.getElementById(_this.opt.CreateNode.outerNode.split('/')[0]).getElementsByTagName(_this.opt.CreateNode.topNodeCos.split('/')[0].toLowerCase());
+
+
+				var b = document.getElementById(_this.opt.CreateNode.outerNode.split('/')[0]).getElementsByTagName(_this.opt.CreateNode.topNodeCos.split('/')[1].toLowerCase());
+
+				if(_this.index == o.length )_this.index = 0;
+				
+
+					for(var i = 0;i < o.length;i++){
+						o[i].className = '';
+						b[i].style.display='none';
+					}
+					o[_this.index].className = 'active';
+					//alert(this.index);
+					b[_this.index].style.display= 'block';
+			
+		
+
+
+			}
+			else{
+
+
+
+			}
+		},this.opt.IntervalTime);
+
+	},
+	'CreateElement':function(){
+		//alert()
+		var obj = document.createElement(this.opt.CreateNode.outerNode.split('/')[1].toLowerCase());
+
+		obj.id = this.opt.CreateNode.outerNode.split('/')[0];
+
+		document.body.appendChild(obj);
+
+
+		for(var i = 0;i < this.opt.CreateNode.length;i++){
+			var objT = document.createElement(this.opt.CreateNode.topNodeCos.split('/')[0].toLowerCase());
+			objT.type = 'button';
+
+			this.opt.CreateNode.topNodeCos.split('/')[0].toLowerCase() == 'input'?objT.value = this.opt.CreateNode.topNodeVal[i]:objT.innerHTML = this.opt.CreateNode.topNodeVal[i];
+			objT.value = this.opt.CreateNode.topNodeVal[i]
+			if(i == 0)objT.className =this.opt.activeTopClass;
+			for(var j in this.opt.CreateNode.topNodeStyle){
+				objT['style'][j] = this.opt.CreateNode.topNodeStyle[j];
+				//alert()
+			}
+			
+
+			obj.appendChild(objT);
+
+
+
+		}
+
+
+		for(var i = 0; i < this.opt.CreateNode.length;i++){
+
+			var objB = document.createElement(this.opt.CreateNode.topNodeCos.split('/')[1].toLowerCase());
+			objB.innerHTML = this.opt.CreateNode.bottomNodeVal[i];
+			if(i==0){
+				objB.style.display = 'block';
+			}	
+			obj.appendChild(objB);
+
+		}
+
+	},
+	'unCreate':function(){
+		//alert('2')
+	},
+	'createNode':function(){
+
+	},
+	'eventNode':function(){
+
+		if(this.opt.isCreate){
+			var o = document.getElementById(this.opt.CreateNode.outerNode.split('/')[0]).getElementsByTagName(this.opt.CreateNode.topNodeCos.split('/')[0].toLowerCase());
+
+			var b = document.getElementById(this.opt.CreateNode.outerNode.split('/')[0]).getElementsByTagName(this.opt.CreateNode.topNodeCos.split('/')[1].toLowerCase());
+
+			//alert(this.opt.CreateNode.topNodeCos.split('/')[1].toLowerCase());
+			for(var i = 0;i < o.length;i++){
+				o[i].index = i;
+				o[i].onclick = function(){
+
+					for(var i = 0;i < o.length;i++){
+						o[i].className = '';
+						b[i].style.display='none';
+					}
+					this.className = 'active';
+					//alert(this.index);
+					b[this.index].style.display= 'block';
+				}
+			}
+
+		}
+		
+	}
+}
+
+new NewTab({
+
+	isCreate:true,
+	CreateNode:{
+		outerNode:'tabNode/DIV',
+		length:8,
+		topNodeCos:'INPUT/DIV',
+		topNodeStyle:{'width':'50px','height':'20px','float':'left','textAlign':'center','cursor': 'pointer'},
+		topNodeVal:['王越超','彭艳','张瑞希','王旭','韩其良','张瑞','李博','hahah'],
+		bottomNodeVal:['啊数据库大了','阿里河山大好的手机卡好看','阿里河阿斯顿哪','阿里河萨达萨达','ssad 距离看到卡就离开','阿里河山大好的手机卡好看213','阿里河山大好的手机卡好看jasdkhkjh','0i009009']
+	},
+	tabNodeName:'sad',
+	nodeToClass:'lll/ooo',
+	activeTopClass:'active',
+	isInterval:true,
+	IntervalTime:2300
+})
+
+
+/*
+
+{
+	isCreate:true/false,
+	CreateNode:{
+		outerNode:’tabNode/DIV’
+		length:9,
+		topNodeCos:’INPUT/DIV’,
+		topNodeStyle:{‘width’:’100px’,’height’:’50px’},
+		topNodeVal:[‘嘻嘻’,’哈哈’,‘嘻嘻’,’哈哈’…],
+		bottomNodeVal:[‘嘻嘻’,’哈哈’,‘嘻嘻’,’哈哈’…]
+	},
+	tabNodeName:,
+	nodeToClass:’lll/ooo’,
+     activeTopClass:’active’,
+	isInterval:true/false,
+	IntervalTime:2000
+}
+*/
+
+
+</script>
+</body>
+</html>

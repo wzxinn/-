@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<style>
+*{ margin:0 ; padding:0}
+#oA{ position:absolute; z-index:1}
+.div2{ display:none;z-index:0; position:absolute; background:#000;}
+.div1{ width:100px; height:100px; background:#999; border:1px solid black; position:absolute; left:50%; top:50%; margin:-50px 0 0 -50px; display:none}
+</style>
+<script>
+
+ /*window.onresize=*/window.onload=function()
+ {
+	var oA=document.getElementById('oA');
+	var oDiv=document.getElementsByTagName('div');
+	
+	oA.onclick=function()
+	{
+		if(oA.innerHTML=='点击注册')
+		{
+		oDiv[0].style.width=document.documentElement.clientWidth+'px';
+		oDiv[0].style.height=document.documentElement.clientHeight+'px';
+		oDiv[0].style.background='#CCC';
+		oDiv[0].style.display='block';
+		oDiv[1].style.display='block';
+		oA.innerHTML='点击关闭'
+		}
+		else
+		{
+			oA.innerHTML='点击注册';
+			
+		    oDiv[0].style.display='none';
+		    oDiv[1].style.display='none';
+		}
+	}
+	
+	 
+ }
+</script>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<a href="javascript:;" id="oA">点击注册</a>
+<div class="div2"></div>
+<div class="div1"></div>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <title></title> 
+</head>
+<body>
+	<div id='parentDiv'>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+	</div>
+	<script type="text/javascript">
+
+		for(var i = 0;i < parentDiv.children.length;i++){
+			parentDiv.children[i].style.width ='200px';
+			parentDiv.children[i].style.height ='200px';
+			parentDiv.children[i].style.background = 'green';
+		}
+
+		//console.log()
+		parentDiv.children[0].style.width = '200px';
+		parentDiv.children[0].style.height = '200px';
+		parentDiv.children[0].style.background = 'red';
+
+		parentDiv.children[2].style.width = '300px';
+		parentDiv.children[2].style.height = '300px';
+		parentDiv.children[2].style.background = 'yellow';
+
+
+	</script>
+</body>
+</html>

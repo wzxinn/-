@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+
+<body>
+	<script type="text/javascript">
+		/*
+			Pending、Resolved(决定)、Rejected(拒绝)
+			catch
+			race 竞速方法
+			all  规整方法 
+			promise 运行完一次之后，生命周期就结束了。
+		*/
+//promise的基本模板
+		/*
+			new Promise(function (Resolved, reject) {
+				// Resolved();
+				// reject();
+			}).then(function () {
+				alert('成功')
+			}, function () {
+				alert('失败')
+			})
+			console.log(new Promise())
+		*/
+		
+//promise的函数回调
+		/*
+			function showPromise(res){
+			return new Promise((resolve,reject)=>{
+					resolve(res);
+				}).then(
+					(x)=>{console.log(x);},
+					()=>{console.log('失败');
+				})
+		}
+		showPromise('李万余');
+		*/
+		
+
+		
+//promise可以跟多个then多个catch进行回调
+	/*
+		function showPromise(){
+		return	new Promise(function(Resolved,reject){
+				Resolved('hehehehe');
+			}).then(function(x){
+				alert(x);
+				return 'ashkdajs';
+			}).then(function(x){
+				alert(x);
+				return '101010'
+			}).then(function(x){
+				alert(x);
+			})
+
+			console.log(new Promise())
+		}
+		showPromise();
+		*/
+//promise可以直接指定成功或者是失败
+		Promise.reject(['333333','sadasda']).then((f,x)=>{
+			//这里不会执行
+		}).catch((a)=>{
+			console.log(a)
+		})		
+	</script>
+
+</body>
+
+</html>

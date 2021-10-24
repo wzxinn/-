@@ -1,0 +1,27 @@
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <title></title> 
+</head>
+<body>
+<script type="text/javascript">
+	/*
+		4.forEach
+		参数是一个函数
+		函数里面的参数 
+		有三个值
+		第一个值 分别对应的咱们数组的每一个值
+		第二个值 索引值
+		第三个值 就是数组的本身
+	*/
+	var arr = [1,2,3];
+	console.log(arr.forEach(function(x,y,z){
+		//console.log(x,y,z)
+		console.log(x == z[y])
+	}));
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <title></title> 
+    <style type="text/css">
+
+*{
+	margin: 0;padding: 0;
+}
+body{font-size: 80px;text-align: center;}
+
+
+    </style>
+</head>
+<body>
+<script type="text/javascript">
+	function random(min,max){
+		return parseInt(Math.random()*(max-min))+min;
+	}
+	var tiemr = null;
+	var Students = [
+		'陈紫鑫','韩其良','王越超','张瑞希','吴晗','王旭','李钰主','李雪慈','刘占红','张东','白欣雨','任美玲','李宁宁','石奕飞','田新锋','宋海静','范金','刘佳妮','李博','伊栋栋','齐弦','彭岩'
+	];
+
+
+	timer = setInterval(function(){
+		document.body.innerHTML = Students[random(0,Students.length)]
+	},0);
+
+	onclick = function(){
+		clearInterval(timer);
+	}
+
+	document.body.style.lineHeight = innerHeight+'px';
+	
+</script>
+</body>
+</html>

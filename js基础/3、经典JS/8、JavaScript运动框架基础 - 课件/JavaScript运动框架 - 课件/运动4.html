@@ -1,0 +1,49 @@
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <title></title> 
+    <style type="text/css">
+*{margin: 0;padding: 0;list-style: none;}
+#div1{width: 100px;height: 100px;
+background: red;position: absolute;left: 0;top: 0;
+-margin-left:20px;padding: 20px;
+border: 0px solid black 
+}
+    
+
+    </style>
+</head>
+<body>
+<div id='div1'></div>
+<script type="text/javascript">
+
+	function getStyle(obj,name){
+		if(obj.currentStyle){
+			return obj.currentStyle[name]
+		}else{
+			return getComputedStyle(obj,false)[name]
+		}
+	};
+
+	move(div1,'borderWidth',200,3);
+	function move(obj,curName,iTarget,timer){
+
+		var t = null;
+		t = setInterval(function(){
+			var cur = parseFloat(getStyle(obj,curName));
+			if(cur == iTarget){
+				clearInterval(t);
+			}
+
+			cur+=1;
+			obj.style[curName] =cur +'px';
+		},timer);
+
+
+	}
+	
+
+</script>
+</body>
+</html>

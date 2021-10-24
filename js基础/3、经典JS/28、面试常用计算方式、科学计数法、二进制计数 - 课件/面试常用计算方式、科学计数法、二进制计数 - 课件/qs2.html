@@ -1,0 +1,23 @@
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <title></title> 
+</head>
+<body>
+<script type="text/javascript">
+	
+	var a = [1,2,3];
+	var b = a;
+	b = null;
+	alert(a);//[1,2,3]
+
+	var a = [1,2,3]; //FX000021370 = [1,2,3]
+	var b = [a];
+	a = null;
+	alert(b);//[[1,2,3]]
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <title></title> 
+</head>
+<body>
+<script type="text/javascript">
+	
+	var a = '123';
+	var b = a;
+	var c = b;
+	var d = c;
+	a.concat(d);
+	b.concat(a);
+	alert(a); //'123'
+	alert(b); //'123'
+	alert(c); //'123'
+	alert(a,b,c,d);//'123'
+
+
+</script>
+</body>
+</html>

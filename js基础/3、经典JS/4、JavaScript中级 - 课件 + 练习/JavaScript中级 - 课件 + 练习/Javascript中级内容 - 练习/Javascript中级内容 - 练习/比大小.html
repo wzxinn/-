@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Untitled Document</title>
+</head>
+
+
+<body>
+<input type="text" />
+<input type="text" />
+<input type="button" value="比较大小"  id="btn"/>
+<script>
+
+	var oin=document.getElementsByTagName("input");
+   btn.onclick=function(){
+   	  if(oin[0].value&&oin[1].value){
+   	  	if(oin[0].value-oin[1].value>0){
+   	  		alert(oin[0].value+"大于"+oin[1].value);
+   	  	}else if(isNaN(oin[0].value)||isNaN(oin[1].value)){
+			alert("只能输入数字");
+		}
+		else if(oin[0].value==oin[1].value){
+			alert(oin[0].value+"和"+oin[1].value+"相等");
+		}else{
+   	  		alert(oin[1].value+"大于"+oin[0].value);
+   	  	}
+   	  }else if(oin[0].value==""||oin[1].value==""){
+			alert("请输入数字");
+	}	
+
+
+   }
+</script>
+</body>
+</html>

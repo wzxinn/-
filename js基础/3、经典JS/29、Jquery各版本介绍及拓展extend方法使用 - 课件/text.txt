@@ -1,0 +1,32 @@
+jquery
+就是js 框架 他所有的东西都脱离不了js 
+说白了就是人家封装的一个面向对象的函数
+
+js 干不了 jq也干不了
+
+jq1.x.x  兼容 ie6 ＋
+jq2.x.x  不兼容 ie6 7 8
+jq3.x.x  又兼容ie6 7 8 而且
+有了许多的es6的东西 移动端 也兼容了
+但是大 特别大
+
+jq 是新手用的 
+学js的时候 先学的jq  那么这个人 注定学不好js了
+
+MooTools 比较厉害的框架
+
+http://jquery.cuishifeng.cn/ api
+
+插件机制
+
+$.extend  添加接口 里面可以传一个json
+
+$.fn.extend 添加一个方法接口
+
+jquery 不能用原生的接口
+原生 不能用jq的接口
+
+
+transition  补间动画
+事件监听的函数不会被覆盖 
+而直接给予的事件 会被覆盖

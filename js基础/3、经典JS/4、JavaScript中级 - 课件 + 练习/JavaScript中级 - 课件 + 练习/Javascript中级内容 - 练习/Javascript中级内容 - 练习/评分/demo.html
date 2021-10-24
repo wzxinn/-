@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<link href="style.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+#pingfen .cg {background:url(star.gif) no-repeat 0 -29px; }
+/*先写一个划过li的类 方便一会替换 */
+</style>
+<script type="text/javascript">
+window.onload = function(){
+	var aLi = pingfen.getElementsByTagName('ul')[0].getElementsByTagName('li');//用变把所有li存起来
+	for(var i = 0;i < aLi.length;i ++){//首先利用循环给所有的li 赋予index 顺序值 和 触碰 加 离开的事件;
+		aLi[i].index = i; //赋予了index 顺序属性;
+
+		aLi[i].onmouseover = function(){//所有的 li 都赋予了鼠标移入事件
+
+			for(var i = 0;i < aLi.length;i ++){
+				aLi[i].className = '';//先清空所有的li 的 class
+			};
+
+			for(var i = 0;i <= this.index; i ++){//利用index值 只要小于等于当前li 的 index 都赋予 cg 这个类就可以了
+				aLi[i].className ='cg';
+			};
+
+		};
+	};
+};
+</script>
+</head>
+
+<body>
+<div id="pingfen">
+	<ul>
+    	<li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>
+</body>
+</html>

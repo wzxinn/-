@@ -1,0 +1,34 @@
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <title></title> 
+    <style type="text/css">
+div{display: none;width: 200px;height: 200px;background: #ccc;}
+div:first-of-type{
+	display: block;
+}
+
+    </style>
+</head>
+<body>
+<input value='1' type='button'>
+<input value='2' type='button'>
+<input value='3' type='button'>
+<div>aaa</div>
+<div>bbb</div>
+<div>ccc</div>
+<script type="text/javascript">
+
+[...document.querySelectorAll('input')].find((x,y)=>{
+	x['onclick'] =() =>{
+		[...document.querySelectorAll('div')].find(d=>{
+			d.style.display ='none';
+		});
+		[...document.querySelectorAll('div')][y].style.display = 'block';
+	};
+});
+
+</script>
+</body>
+</html>

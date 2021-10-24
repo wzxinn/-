@@ -1,0 +1,48 @@
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <title></title> 
+    <style type="text/css">
+*{margin: 0;padding: 0;list-style: none;}
+#div{
+	width: 100px;height: 100px;background: red;
+}
+
+    </style>
+</head>
+<body>
+<div id='div'></div>
+<script type="text/javascript">
+	
+	function getStyle(obj,name){
+		if(obj.currentStyle){
+			return obj.currentStyle[name]
+		}else{
+			return getComputedStyle(obj,false)[name]
+		}
+	};
+
+	function move(){
+		var w = parseFloat(getStyle(div,'width'));
+		//100
+
+		//110
+		var m = 200;
+
+		var speed = (m-w)/3;
+
+		console.log(speed + ',' +w)
+		//(200 - 100)/10
+		//200 - 110 /9
+
+		div.style.width = w+speed+'px';
+		//110
+		//119
+	}
+	
+	setInterval(move,200);
+	//window.onclick = move;
+</script>
+</body>
+</html>

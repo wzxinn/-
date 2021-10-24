@@ -1,0 +1,30 @@
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <title></title> 
+</head>
+<body>
+	<script type="text/javascript">
+
+		var json = {'leo':20,'sky':30};
+		/*
+		const map = new Map(Object.entries(json));
+		*/
+
+		//console.log(map)
+/*
+		for(var i of map){
+			console.log(i[1])
+		}
+*/
+		for(var [key,value] of Object.entries(json)){
+			console.log(value)
+		}
+
+
+
+
+	</script>
+</body>
+</html>

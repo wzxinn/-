@@ -1,0 +1,24 @@
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <title></title> 
+</head>
+<body class='leo'>
+
+<script type="text/javascript">
+	/*
+        hasOwnProperty()
+        确定某个对象是否具有指定的一个属性
+        如果有 就返回一个 true  没有的情况下 那就返回一个 false
+        类似in
+        但是在实例化对象中 和 in 有区别
+        hasOwnProperty()不会去查找该对象的原型链，in则会
+    */
+var a = new String('aaa');
+console.log(a.hasOwnProperty('split'));//false
+console.log(String.prototype.hasOwnProperty('split'))//true
+
+</script>
+</body>
+</html>

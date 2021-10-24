@@ -1,0 +1,46 @@
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <title></title> 
+</head>
+<body>
+	<script type="text/javascript">
+		/*
+			await
+			只能和 async 配合
+
+			await 后面是紧跟着一个Promise对象
+			如果没有 会立即转成一个Promise.resolve的对象。
+
+			如果没有return 它不会默认是成功
+			如果想执行 reject 就不用加return 
+
+			只会执行一个结果 如果执行了 reject 后面就会中断执行
+
+			try{}
+			catch(e){
+				
+			}
+		*/
+//基础用法
+		async function leo(){
+			return await 1;
+			//等同于await Promise.resolve(1);
+		};
+
+		leo().then(x=>console.log(x));
+
+//没有return不会认为是成功，想执行reject就不用加return
+		/*
+			async function leo(){
+				await Promise.reject(1);
+			};
+
+			leo().then(x=>console.log(x)).catch(x=>console.log(x+'失败了'));
+		*/
+
+
+	</script>
+</body>
+</html>

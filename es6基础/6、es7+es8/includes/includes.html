@@ -1,0 +1,57 @@
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <title></title> 
+</head>
+<body>
+	<script type="text/javascript">
+		/*
+			关于参数：
+			可以放2个
+			第一个参数 就是要搜索的值
+			第二个参数 就是开始的索引，索引是从0开始
+
+			简单来说 他会使用 === 进行比对 如果都是 true 那么就是true
+
+			精准性：
+			必须要求很精准
+
+			console.log([['a'],'b','c'].includes('a',0))// false
+
+			indexOf 和 includes 区别
+			console.log([1,NaN,2,3].indexOf(NaN))   //-1 没有找不到
+			console.log([1,NaN,2,3].includes(NaN))
+			//1 能找到
+
+			1.他们对NaN处理方式不同 
+			2.不关心索引位置的情况下 我建议使用 includes
+			3.如果想知道某一个值在什么位置 只能使用 indexOf
+		*/
+
+		//基本用法,查找5在不在[1,2,3,4,5]中
+		console.log([1,2,3,4].includes(5));
+		//查找的时候必须完全吻合才返回true
+		console.log(['abc',2,3,4].includes('a'));
+
+		//数组的方法，数组属于对象，但是两个对象肯定不相等
+		console.log([] === []);
+		console.log(['abc',[],3,4].includes([]));
+
+		//第二个参数
+		console.log(['a','b','c'].includes('b',2));
+
+		//不能查找子数组
+		console.log([['a'],'b','c'].includes('a',0));
+
+		//indexOf和include的区别
+		//indexOf会返回位置，没有返回-1
+		console.log([['a'],'b','c','d','b'].indexOf('b',2));
+
+		//indexOf查找NaN的时候，会返回-1，但include会返回true
+		console.log([1,NaN,2,3].indexOf(NaN));
+		console.log([1,NaN,2,3].includes(NaN));
+
+	</script>
+</body>
+</html>

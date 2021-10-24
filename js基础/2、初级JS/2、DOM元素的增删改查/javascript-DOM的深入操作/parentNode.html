@@ -1,0 +1,35 @@
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <title></title> 
+</head>
+<body>
+	<div>
+		<div>
+			<div id='div1'>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		//console.log(div1);
+		div1.style.width = '200px';
+		div1.style.height = '200px';
+		div1.style.background = 'red';
+
+		//选取父级
+		div1.parentNode.style.width ='300px';
+		div1.parentNode.style.height ='300px';
+		div1.parentNode.style.background ='yellow';
+
+		div1.parentNode.parentNode.style.width = '400px';
+		div1.parentNode.parentNode.style.height = '400px';
+		div1.parentNode.parentNode.style.background = 'green';
+
+		console.log(div1.parentNode.parentNode.parentNode)
+
+
+
+	</script>
+</body>
+</html>

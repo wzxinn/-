@@ -1,0 +1,46 @@
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <title></title> 
+</head>
+<body>
+	<input type="button" value='add' name="" id='ipt'>
+	<script type="text/javascript">
+/*		
+		ipt.onclick = function(){
+			alert(1);
+		};
+
+
+		ipt.onclick = function(){
+			alert(2);
+		};
+*/
+	/*
+		ipt.addEventListener('mouseover',function(){
+			alert(1);
+		});
+	*/
+	function a(){
+		alert(1);
+		ipt.removeEventListener('click',a);
+	};
+
+	function b(){
+		alert(2);
+	};
+
+	ipt.addEventListener('click',a);
+
+	ipt.addEventListener('click',b);
+
+
+
+
+
+
+
+	</script>
+</body>
+</html>

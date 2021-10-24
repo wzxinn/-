@@ -1,0 +1,48 @@
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <title></title> 
+    <style type="text/css">
+   	
+
+    </style>
+</head>
+<body>
+	<div>1</div>
+	<div>2</div>
+	<div>3</div>
+	<div>4</div>
+	<div>5</div>
+	<div>6</div>
+	<div>7</div>
+	<div>8</div>
+	<div>9</div>
+	<div>10</div>
+	<div>11</div>
+	<div>12</div>
+<script type="text/javascript">
+	var allDiv = document.getElementsByTagName('div');
+
+	for(var i = 0; i < allDiv.length;i++){
+		if(i == 0){
+			continue;
+		}
+		else if(i == 2){
+			continue;
+		}
+		else if(i == 4){
+			continue;
+		}
+		else{
+			allDiv[i].style.background = 'red';
+		};
+		
+	};
+
+
+
+
+</script>
+</body>
+</html>

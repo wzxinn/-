@@ -1,0 +1,56 @@
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <title></title> 
+</head>
+<style type="text/css">
+	
+	*{
+		margin: 0;padding: 0;list-style: none;
+
+	}
+	#div1{
+		width: 1px;height: 100%;background: black;position: absolute;left: 50%;
+	}
+	#div2{
+		width: 100px;height: 100px;background: red;
+		position: absolute;left: -100px;top: 300px;
+	}
+	#div3{
+		width: 100px;height: 100px;background: green;
+		position: absolute;left: 1px;top: 300px;
+	}
+</style>
+<body>
+<div id='div1'>
+	<div id='div2'></div>
+	<div id='div3'>
+</div>
+<script type="text/javascript">
+	
+	div2.onmousedown = function(e){
+		var ev = e || event;
+		var l = ev.clientX - this.offsetLeft;
+		var t = ev.clientY - this.offsetTop;
+
+		var oldL = div2.offsetLeft;
+		var oldBL = div3.offsetLeft;
+
+		document.onmousemove = function(e){
+			var ev = e || event;
+			div2.style.left = ev.clientX - l + 'px';
+			div2.style.top  = ev.clientY - t + 'px';
+
+			var newL = div2.offsetLeft - oldL;
+		//	console.log(newL);
+			div3.style.top = ev.clientY - t + 'px';
+			div3.style.left = oldBL- newL + 'px';
+		};
+		document.onmouseup = function(){
+			document.onmousemove = document.onmouseup = null;
+		}
+	}
+</script>
+</body>
+</html>

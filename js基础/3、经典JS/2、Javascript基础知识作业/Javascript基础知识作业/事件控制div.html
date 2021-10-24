@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<style>
+#div1{ width:100px; height:100px; background:red;}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Untitled Document</title>
+<script>
+window.onload=function()
+{
+ var oDiv=document.getElementById('div1');
+ var oBt=document.getElementsByTagName('input');
+ 
+ oBt[0].onclick=function()
+ {
+  change('width','400px')
+ }
+ oBt[1].onclick=function()
+ {
+  change('height','400px') 
+ }
+  oBt[2].onclick=function()
+ {
+  change('background','green') 
+ }
+  oBt[3].onclick=function()
+ {
+  change('background','yellow') 
+ }
+ oBt[4].onclick=function()
+ {
+	yuan() 
+ }
+ 
+ function yuan()
+ {
+	 oDiv.style.width='100px'
+	 oDiv.style.height='100px'
+	 oDiv.style.background='red'
+ }
+function change(name,value)
+ {
+	var oDiv=document.getElementById('div1');
+	oDiv.style[name]=value
+ }
+}
+
+</script>
+</head>
+
+<body>
+<input type="button" value="变宽" />
+<input type="button" value="变高" />
+<input type="button" value="变绿" />
+<input type="button" value="变黄" />
+<input type="button" value="恢复" />
+<div id="div1"></div>
+</body>
+</html>

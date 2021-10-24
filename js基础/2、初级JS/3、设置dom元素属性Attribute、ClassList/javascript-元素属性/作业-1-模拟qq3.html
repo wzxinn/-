@@ -1,0 +1,89 @@
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <title></title>
+    <style type="text/css">
+#toMsg{width: 300px;height: 500px;border: 1px solid black;}	
+#toMsg dl dd{margin: 0;padding: 0;}
+
+    </style> 
+</head>
+<body>
+	<div id='userBox'>
+		姓名:
+		<input type="" name="" id='userIpt'>
+		<input type="button" name="" value='确认' id='btnNode'>
+	</div>
+	<div id='toMsg'>
+		
+	</div>
+	<div id='MsgBox'>
+		<input type="" name="" id='Msg'>
+		<input type="button" name="" value='确认' id='MsgIpt'>
+	</div>
+	<script type="text/javascript">
+	//模拟QQ
+
+	/*
+		登记完了 名字之后 
+		登记名字的 元素消失
+
+		如果没登记名字 下面的内容 点击发送 提示 没有登记名字
+
+		登记之后 点击发送
+		可以发送消息 
+
+		名字
+		消息内容
+
+	*/
+
+	var user = '';
+	//确认名字
+	btnNode.onclick = function(){
+		if(userIpt.value == ''){
+			alert('名字不能为空');
+		}
+		else{
+			user = userIpt.value;
+			userBox.style.display = 'none';
+		}
+		
+	};
+
+
+	//发送消息的按钮
+	MsgIpt.onclick = function(){
+
+		if(Msg.value == ''){
+			alert('您输入的信息不能为空');
+			return;
+		}
+
+		if(user == ''){
+			alert('您还没有登记名字');
+		}
+		else{
+			var allDl = toMsg.children;
+			
+			var oDl = document.createElement('dl');
+
+			oDl.innerHTML = '<dd>'+user+'</dd><dt>'+Msg.value+'</dt>';
+
+			
+			if(allDl.length == 0){
+				toMsg.appendChild(oDl);
+			}else{
+				toMsg.insertBefore(oDl,toMsg.children[0]);
+			}
+			
+			
+			//toMsg
+			Msg.value = '';
+		}
+	};
+
+	</script>
+</body>
+</html>

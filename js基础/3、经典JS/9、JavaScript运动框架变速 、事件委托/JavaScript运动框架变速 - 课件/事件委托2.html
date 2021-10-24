@@ -1,0 +1,51 @@
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <title></title> 
+    <style type="text/css">
+*{margin: 0;padding: 0}
+
+#a{
+	width: 100px;height: 100px;background: red;
+}
+#b{
+	width: 100px;height: 100px;background: black;
+}
+.ppp{
+	width: 100px;height: 100px;background: red;float: left;margin: 20px;
+}
+
+
+    </style>
+</head>
+<body>
+<div class='ppp'></div>
+<div class='ppp'></div><div class='ppp'></div><div class='ppp'></div><div class='ppp'></div><div class='ppp'></div><div class='ppp'></div><div class='ppp'></div><div class='ppp'></div><div class='ppp'></div><div class='ppp'></div><div class='ppp'></div><div class='ppp'></div><div class='ppp'></div><div class='ppp'></div><div class='ppp'></div><div class='ppp'></div><div class='ppp'></div><div class='ppp'></div><div class='ppp'></div><div class='ppp'></div><div class='ppp'></div><div class='ppp'></div>
+<div class='ppp'></div><div class='ppp'></div><div class='ppp'></div><div class='ppp'></div><div class='ppp'></div><div class='ppp'></div><div class='ppp'></div><div class='ppp'></div><div class='ppp'></div><div class='ppp'></div><div class='ppp'></div><div class='ppp'></div><div class='ppp'></div><div class='ppp'></div><div class='ppp'></div><div class='ppp'></div><div class='ppp'></div><div class='ppp'></div><div class='ppp'></div><div class='ppp'></div><div class='ppp'></div><div class='ppp'></div>
+<div class='ppp'></div><div class='ppp'></div><div class='ppp'></div><div class='ppp'></div><div class='ppp'></div><div class='ppp'></div><div class='ppp'></div><div class='ppp'></div><div class='ppp'></div><div class='ppp'></div><div class='ppp'></div><div class='ppp'></div><div class='ppp'></div><div class='ppp'></div><div class='ppp'></div><div class='ppp'></div><div class='ppp'></div><div class='ppp'></div><div class='ppp'></div><div class='ppp'></div><div class='ppp'></div><div class='ppp'></div>
+<div class='ppp'></div><div class='ppp'></div><div class='ppp'></div><div class='ppp'></div><div class='ppp'></div><div class='ppp'></div><div class='ppp'></div><div class='ppp'></div><div class='ppp'></div><div class='ppp'></div><div class='ppp'></div><div class='ppp'></div><div class='ppp'></div><div class='ppp'></div><div class='ppp'></div><div class='ppp'></div><div class='ppp'></div><div class='ppp'></div><div class='ppp'></div><div class='ppp'></div><div class='ppp'></div><div class='ppp'></div>
+<div class='ppp'></div><div class='ppp'></div><div class='ppp'></div><div class='ppp'></div><div class='ppp'></div><div class='ppp'></div><div class='ppp'></div><div class='ppp'></div><div class='ppp'></div><div class='ppp'></div><div class='ppp'></div><div class='ppp'></div><div class='ppp'></div><div class='ppp'></div><div class='ppp'></div><div class='ppp'></div><div class='ppp'></div><div class='ppp'></div><div class='ppp'></div><div class='ppp'></div><div class='ppp'></div><div class='ppp'></div>
+<div class='ppp'></div><div class='ppp'></div><div class='ppp'></div><div class='ppp'></div><div class='ppp'></div><div class='ppp'></div><div class='ppp'></div><div class='ppp'></div><div class='ppp'></div><div class='ppp'></div><div class='ppp'></div><div class='ppp'></div><div class='ppp'></div><div class='ppp'></div><div class='ppp'></div><div class='ppp'></div><div class='ppp'></div><div class='ppp'></div><div class='ppp'></div><div class='ppp'></div><div class='ppp'></div>
+<script type="text/javascript">
+	
+
+/*
+function a(){
+	alert(this);
+};
+new a();
+*/
+
+	document.onclick = function(e){
+		var ev = e || event;
+		var iTarget = ev.srcElement || ev.target//ev.srcElement;
+		if(iTarget.className == 'ppp'){
+			iTarget.style.background = 'green';
+			//alert(this);
+		}
+
+	}
+</script>
+</body>
+</html>

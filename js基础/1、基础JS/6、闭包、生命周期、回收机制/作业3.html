@@ -1,0 +1,39 @@
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <title></title> 
+    <style type="text/css">
+    body{position: relative;}	
+
+
+    </style>
+</head>
+<body id='bodyNode'>
+	<button id='btn1'>+</button>
+	<span id='span'>0</span>
+	<button id='btn2'>-</button>
+	<script>
+	
+		var btn1 = document.getElementById('btn1'),
+			btn2 = document.getElementById('btn2'),
+			span = document.getElementById('span'),
+			num = 0;
+		btn1.onclick =function(){
+			num = num + 1;
+			span.innerHTML = num;
+		};
+
+		btn2.onclick = function(){
+			num = num - 1;
+			if(num == -1){
+				num = 0;
+			}
+			span.innerHTML = num;
+		};
+	</script>
+</body>
+</html>
+
+
+

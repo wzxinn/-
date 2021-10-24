@@ -1,0 +1,65 @@
+一.Promise篇
+Pending、Resolved(决定)、Rejected(拒绝)
+catch
+race 竞速方法
+all  规整方法 
+
+demo：
+1.显示隐藏
+2.es6版自动选项卡
+3.promise版 ajax
+4.promise版 登录
+
+二.webWork
+postMessage
+onmessage
+
+简易服务器 多线程的任务清单
+
+
+三.回顾篇 
+map的整体赋值
+疑问。。。　
+
+
+
+Promise 是个对象
+类似 一个事情 
+事情 就会 有 成功 或者 失败
+只要触发一个  这个函数就完成了自己任务
+
+one  只执行一次
+then(成功函数 , 失败的函数)
+then(成功函数).catch( 失败的函数)
+
+promise 厉害之处就是能无限的回调
+
+抛出 异常throw ‘出大事了 下面就别之行了’
+console.error();
+console.warn();
+
+race ->只看第一个promise 成功就成功 ，失败就失败
+all    ->要不然就是全胜 要不然就是 失败
+
+wamp->
+w:windows
+a:aphte
+m:mysql
+p:php
+
+mamp->
+m:mac
+
+订外卖
+
+手机 o
+软件 o
+订单 o
+接不接你的单
+订单发送来
+
+同步 一个事办完之前 后面的事不允许去办 false
+异步 所有的事 可以同事开工 true
+
+
+

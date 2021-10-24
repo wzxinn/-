@@ -1,0 +1,25 @@
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <title></title> 
+</head>
+<body>
+	<div id='div1'>go</div>
+	<script type="text/javascript">
+
+		function to(){
+			if(!confirm('你觉得我帅么?')){
+				to();
+			}
+			else{
+				alert('你真有眼光!');
+			}
+		}
+
+		div1.onclick = function(){
+			to()
+		};
+	</script>
+</body>
+</html>

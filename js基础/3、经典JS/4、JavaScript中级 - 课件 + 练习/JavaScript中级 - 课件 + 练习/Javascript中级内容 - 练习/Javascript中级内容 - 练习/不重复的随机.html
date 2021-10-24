@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script>
+window.onload=function()
+{
+	oSpan=document.getElementsByTagName('span')[0];
+	oBt=document.getElementsByTagName('input')[0];
+	oBt1=document.getElementsByTagName('input')[1];
+	timer=null
+//1-34
+function rnd(n, m)
+{
+	return parseInt(Math.random()*(m-n))+n;
+}
+
+function han()
+{
+var arr=[];
+
+for(var i=0;i<6;i++)
+{
+	arr[i]=rnd(1, 34);
+}
+
+ oSpan.innerHTML=arr
+};
+oBt.onclick=function()
+{
+	clearInterval(timer)
+};
+oBt1.onclick=function()
+{
+  clearInterval(timer)
+  timer=setInterval(han,10)
+}
+
+timer=setInterval(han,10)
+han();
+};
+</script>
+</head>
+
+<body>
+<span></span>
+<input type="button" value="stop" style="position:absolute; left:30%; top:0">
+<input type="button" value="play" style="position:absolute; left:40%; top:0">
+</body>
+</html>

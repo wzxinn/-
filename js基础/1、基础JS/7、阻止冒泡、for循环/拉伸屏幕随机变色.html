@@ -1,0 +1,40 @@
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <title></title>
+    <style type="text/css">
+body{background: rgb(100,100,33);}  	
+
+
+    </style> 
+</head>
+<body>
+	<script type="text/javascript">
+	//使用随机数 整3个整数
+
+/*
+	var a = Math.random() * 256 + ''
+
+	//0 - 1 * 256
+
+	console.log(a.substring(0,a.indexOf('.')));
+
+*/
+
+	console.log(parseInt('71.12312312'))
+
+	function toNum(){
+		var a = Math.random() * 256 + '';
+		return a.substring(0,a.indexOf('.'));
+	};
+	onresize = function(){
+		//console.log( toNum());
+		document.body.style.background = 'rgb('+toNum()+','+toNum()+','+toNum()+')'
+	};
+
+
+
+	</script>
+</body>
+</html>

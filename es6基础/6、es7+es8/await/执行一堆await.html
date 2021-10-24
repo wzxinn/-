@@ -1,0 +1,42 @@
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <title></title> 
+</head>
+<body>
+	<script type="text/javascript">
+		
+		async function leo(){
+			/*
+			console.log(await one())
+			console.log(await two());
+			console.log(await three());
+			*/
+			let [a,b,c] = await Promise.all([one(),two(),three()]);
+			return await 'leo';
+			
+		};
+
+		
+		async function one(){
+			console.log('111');
+			return await 'one';
+		};
+
+		async function two(){
+			console.log('222')
+			return await 'two';
+		};
+
+		async function three(){
+			console.log('333')
+			return await 'three';
+		};
+
+		leo().then(x=>console.log(x));
+
+
+	</script>
+</body>
+</html>

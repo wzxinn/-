@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+</head>
+
+<body>
+    <script type="text/javascript">
+/*
+    1.set可以理解为存物箱，set常与数组一起使用
+    2.set中的值是唯一的，可以用来去重数组
+    3.set -->  add/has/size/keys/values/delete/clear/entries
+
+*/
+//最基础的用法
+        var set = new Set();
+        set.add(1);
+        set.add(2);
+        set.add(3);
+        console.log(set);
+        console.log(set.constructor)
+//for of 出set内的值
+        for(let i of set.values()){
+            console.log(i);
+        }
+//add
+        set.add(4);
+//has检查是否有指定内容
+        console.log(set.has(4));
+//size类似length
+        console.log(set.size);
+//keys  values 
+        for(var i of set.values()){
+	        console.log(i)
+        }
+//delete 删除指定值
+        set.delete(4);
+//entries 将set变成伪数组
+        console.log(set.entries());
+//clear 清空set
+    set.clear();
+//set Array
+        /*
+            var arr = [1,2,3,4,5];
+            var arr2 = [1,2,3,4,5,6,7,7];
+            var set = new Set([...arr,...arr2]);
+            //console.log(set)
+            var arr3 = [...set];
+            console.log(arr3);
+        */
+
+
+//console.log(Set.prototype)
+    </script>
+</body>
+
+</html>

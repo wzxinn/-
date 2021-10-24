@@ -1,0 +1,59 @@
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <title></title> 
+</head>
+<style>
+	.active{
+		background-color: red;
+	}
+</style>
+<body>
+<input value='1' type='button' class="active">
+<input value='2' type='button'>
+<input value='3' type='button'>
+
+
+<script type="text/javascript">
+	let allInput = document.getElementsByTagName('input');
+	//用let可以防止变量泄露,同时形成一个块级作用域
+	for(let i = 0;i < allInput.length;i++){
+		//最早的做法，相当于生成了三个匿名函数
+		// (function(x){
+		// 	allInput[x].onclick = function(){
+		// 		console.log(x)
+		// 	}
+		// })(i)
+		allInput[i].onclick=function(){
+			console.log(i)
+		}
+
+	}
+
+		/*
+		错误的赋予事件方法
+		allInput[i].onclick = function(){
+			alert(i)
+		}
+		*/
+	//使用块级作用域来做选项卡
+		/*
+		for(let i = 0;i < allInput.length;i++){
+		allInput[i].onclick = function(){
+			//循环清空className
+			for(var j = 0;j < allInput.length;j++){
+				allInput[j].className = '';
+			}
+			//让选中的i，class变成active
+			allInput[i].className = 'active';
+		}
+		}
+		*/
+		
+	
+
+
+</script>
+</body>
+</html>

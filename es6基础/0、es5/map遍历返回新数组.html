@@ -1,0 +1,35 @@
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <title></title> 
+</head>
+<body>
+<script type="text/javascript">
+	/*
+		5.map
+		参数是一个函数
+		函数里面的参数 
+		有三个值
+		第一个值 分别对应的咱们数组的每一个值
+		第二个值 索引值
+		第三个值 就是数组的本身
+		会返回一个新数组，可以通过return 来操作新数组的内容
+	*/
+	var arr = ['leo','make','llo'];
+	var arr2 = arr.map((x)=>{
+		return x.toUpperCase();
+	});
+	console.log(arr2);
+	//[]
+	/*
+	console.log(arr.map(function(x,y,z){
+		console.log(x,y,z);
+		return 1;
+	}));
+	*/
+
+
+</script>
+</body>
+</html>

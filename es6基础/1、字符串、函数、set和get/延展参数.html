@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+</head>
+
+<body>
+
+    <script type="text/javascript">
+    //延展参数 可以延展任何类型 array  string number json
+    //延展参数 如果我传了 参数 那么 就执行我的参数 如果我没传参数 那么 参数就为我延展的值
+        function show(x = 5, y = [1, 2, 3]) {
+            //这里相当于执行了一句var x = x || 5;
+            console.log(y)
+        };
+        show(1, 2);
+
+    //对象也能作为参数传入函数
+        /*
+        var obj = {a : 3}
+        function show(x={a:5,b:3}){
+            console.log(x.b)
+        };
+        show();
+        */
+    </script>
+</body>
+
+</html>

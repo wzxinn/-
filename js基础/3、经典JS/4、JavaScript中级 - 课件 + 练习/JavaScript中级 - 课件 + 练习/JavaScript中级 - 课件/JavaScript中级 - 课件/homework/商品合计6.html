@@ -1,0 +1,114 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+</head>
+
+<body>
+
+<ul id="list">
+	<li>
+  	<input type="button" value="-" />
+    <strong>0</strong>
+  	<input type="button" value="+" />
+    单价：<em>12.5元</em>
+    小计：<span>0元</span>
+  </li>
+	<li>
+  	<input type="button" value="-" />
+    <strong>0</strong>
+  	<input type="button" value="+" />
+    单价：<em>10.5元</em>
+    小计：<span>0元</span>
+  </li>
+	<li>
+  	<input type="button" value="-" />
+    <strong>0</strong>
+  	<input type="button" value="+" />
+    单价：<em>8.5元</em>
+    小计：<span>0元</span>
+  </li>
+	<li>
+  	<input type="button" value="-" />
+    <strong>0</strong>
+  	<input type="button" value="+" />
+    单价：<em>8元</em>
+    小计：<span>0元</span>
+  </li>
+	<li>
+  	<input type="button" value="-" />
+    <strong>0</strong>
+  	<input type="button" value="+" />
+    单价：<em>14.5元</em>
+    小计：<span>0元</span>
+  </li>
+</ul>
+
+<p>
+商品合计共：<span id='all'>0</span>件，共花费了：<span id='money'>0</span>元<br />
+其中最贵的商品单价是：<span id='max'>0</span>元
+</p>
+
+<script type="text/javascript">
+  var allShop = 0;
+  var allMoney = 0;
+  var moneyArr = [];
+  var allInput = list.getElementsByTagName('input');
+  for(var i = 0;i < allInput.length;i++){
+    allInput[i]['onclick'] = function(){
+      //alert(this.parentNode.children[1].innerHTML);
+      if(this.value =='+'){
+        allShop++;
+       // alert(1);
+        var needVal = this.parentNode.children[1].innerHTML;
+        needVal++;
+        this.parentNode.children[1].innerHTML = needVal;
+      }
+      else{
+        
+        var needVal = this.parentNode.children[1].innerHTML;
+        needVal > 0 && allShop--;
+        needVal--;
+        this.parentNode.children[1].innerHTML = needVal<=-1?0:needVal;
+      }
+
+      var oSpan = this.parentNode.getElementsByTagName('span')[0];
+      var oEm = this.parentNode.getElementsByTagName('em')[0].innerHTML.replace('元','');
+      var needVal = this.parentNode.children[1].innerHTML;
+      oSpan.innerHTML = oEm * needVal + '元';
+
+      document.getElementById('all').innerHTML = allShop;
+
+
+      var allSpan = list.getElementsByTagName('span');
+      allMoney = 0;
+      for(var i = 0;i <allSpan.length;i++){
+        allMoney+=Number(allSpan[i].innerHTML.replace('元',''))
+      }
+      //12.5
+      //12.5 + 25
+      //37.5
+     //console.log(allMoney);
+      document.getElementById('money').innerHTML = allMoney;
+
+      var allStorg = document.getElementsByTagName('strong');
+      moneyArr = [];
+      for(var i =0;i <allStorg.length;i++){
+        //console.log(allStorg[i].innerHTML);
+         if(allStorg[i].innerHTML != '0'){
+           moneyArr.push(Number(allStorg[i].parentNode.getElementsByTagName('em')[0].innerHTML.replace('元','')));
+         }
+      }
+
+     //console.log(moneyArr.sort(function(a,b){return b-a}));
+    // console.log(moneyArr)
+     document.getElementById('max').innerHTML = moneyArr.length?moneyArr.sort(function(a,b){return b-a})[0]:0;
+
+    }
+  }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            webwoker必须在服务器中才能运行
+        */
+        var worker = new Worker('li.js');
+        worker.postMessage('wzx');//发数据
+        worker.onmessage=function(res){
+            console.log(res.data);
+        }
+    </script>
+</body>
+</html>

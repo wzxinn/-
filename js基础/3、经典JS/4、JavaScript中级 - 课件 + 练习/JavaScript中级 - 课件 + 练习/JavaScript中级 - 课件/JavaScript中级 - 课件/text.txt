@@ -1,0 +1,50 @@
+js 有一些特殊的机制
+回收 null
+预解析
+就是把var的变量 在这块作用域下 提前
+但是 没有在window上
+
+对象两个机制 
+一个引用
+可以给私有属性 
+a.b = 10;
+
+对象引用 
+var a = [1,2,3];
+b = a;
+b.push(1);
+alert(a)
+…
+
+量 in 对象
+如果true 
+不在false
+
+dom
+d = document
+o = object
+m = module
+
+bom 
+b = browser 
+o = object
+m = module
+
+new Date(); 
+js的时间对象
+getTime()
+是从 1970年1月1日 00:00:00 到现在经过的毫秒 也就是 时间戳
+
+getFullYear 返回当前的年数
+getMonth 返回当前的月数 美国从0 开始计数
+getDate  返回当前的日数
+getHours 返回当前的小时数 24计算
+getMinutes 返回当前的几分
+getSeconds 返回当前的秒数
+
+setMonth() 让他变成当前的＋或者－的多少个月
+set所有的都有 set 完了 get就会获取 你set的东西
+
+getDay 返回星期几 
+0 星期日
+1 - 6 星期一－ 星期六 

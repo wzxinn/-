@@ -1,0 +1,15 @@
+#container {
+    width: 700px;
+    height: 500px;
+    border: 1px solid #000;
+    margin: 60px auto 10px auto;
+    position: relative;
+}
+#container div {
+    position: absolute;
+    border: 1px dashed black;
+}
+p {
+    margin: 0; padding: 10px;
+    text-align: center;
+}

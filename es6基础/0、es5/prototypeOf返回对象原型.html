@@ -1,0 +1,32 @@
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <title></title> 
+</head>
+<body>
+<script type="text/javascript">
+/*
+	1.Object.getPrototypeOf;
+	返回对象的原型
+	prototype
+*/
+	/*
+	function leo(){
+		this.f = 20
+	};
+	leo.prototype={
+		"a":'10',
+		"b":20,
+		"c":function(){
+			alert(1);
+		}
+	};
+	var c = new leo();
+	*/
+	console.log([].constructor.prototype == Object.getPrototypeOf(Array()))
+	console.log([].constructor.prototype)
+
+</script>
+</body>
+</html>

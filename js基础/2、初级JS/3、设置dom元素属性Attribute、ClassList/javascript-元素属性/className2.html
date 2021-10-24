@@ -1,0 +1,36 @@
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <title></title> 
+    <style type="text/css">
+    	#div1{width: 200px;height: 200px;background: red;}
+    	.div3{
+    		background: yellow;
+    	}
+    </style>
+</head>
+<body>
+	<div id='div1' class='' leo='18'></div>
+	<script type="text/javascript">
+
+		div1.onclick = function(){
+
+			if(div1.className == ''){
+				div1.className = 'div3';
+			}
+			else{
+				div1.className += ' div3';
+			}
+			//if
+			//div1.className += ' div3';
+			//div1.className = 'div2 div3';
+		};
+
+		//div1.className = 'div4'
+		//console.log(div1.className);
+
+
+	</script>
+</body>
+</html>

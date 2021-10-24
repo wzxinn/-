@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+<head>
+<style>
+#div1{ width:600px; height:400px; margin:0 auto; }
+#div1 div{ width:100px; height:100px; float:left; margin:10px 0 0 10px; background:blue;text-align:center; font:24px/100px "Arial Black", Gadget, sans-serif; color:white; position:relative; }
+#div1 div img{ position:absolute; top:0; left:0; z-index:1}
+#div1 div span{ z-index:99;}
+</style>
+
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+</head>
+
+<body>
+<div id="div1">
+  
+</div>
+<input type="button" value="更多的色子">
+<input type="button" value="摇色子">
+<input type="button" value="更少的色子">
+<input type="button" value="stop">
+<p><span id="oSpan">0</span>色子</p>
+<p>总计<span id="oSpan2">0</span></p>
+<script type="text/javascript">
+	
+	var allSz  = 0;
+	var timer  = null
+	var allNum = 0;
+	function random(min,max){
+		return parseInt(Math.random()*(max-min))+min;
+	};
+	var allInput = document.getElementsByTagName('input');
+
+	allInput[3]['onclick'] = function(){
+		clearInterval(timer);
+	}
+	allInput[1]['onclick'] = function(){
+		clearInterval(timer);
+		timer = setInterval(function(){
+			var allDiv = div1.children;
+			for(var i =0;i < allDiv.length;i++){
+				var rnd = random(1,7);
+				allDiv[i].setAttribute('ran',rnd);
+				allDiv[i].children[0].src='img/'+rnd+'.gif';
+
+
+				allNum = 0;
+				for(var j = 0;j < allDiv.length;j++){
+					allNum+=Number(allDiv[j].getAttribute('ran'));
+				};
+				oSpan2.innerHTML = allNum;
+			}
+		},30);
+	};
+	allInput[2]['onclick'] = function(){
+		var allDiv = div1.children;
+		if(allDiv.length == 0)return;
+		allSz--;
+		div1.removeChild(allDiv[allDiv.length-1]);
+		oSpan.innerHTML = allSz;
+
+		allNum = 0;
+		var allDiv = div1.children;
+		for(var i = 0;i < allDiv.length;i++){
+			allNum+=Number(allDiv[i].getAttribute('ran'));
+		};
+		oSpan2.innerHTML = allNum;
+	};
+
+	allInput[0]['onclick'] = function(){
+		allSz++;
+		var div = document.createElement('div');
+		var rnd = random(1,7);
+		div.innerHTML = '<img src=img/'+rnd+'.gif>'
+		div.setAttribute('ran',rnd);
+		div1.appendChild(div);
+		oSpan.innerHTML = allSz;
+
+		allNum = 0;
+		var allDiv = div1.children;
+		for(var i = 0;i < allDiv.length;i++){
+			allNum+=Number(allDiv[i].getAttribute('ran'));
+		};
+		oSpan2.innerHTML = allNum;
+
+	};
+</script>
+</body>
+</html>

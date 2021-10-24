@@ -1,0 +1,42 @@
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <title></title> 
+    <style type="text/css">
+body,html{height: 100%;}    
+#myDiv{width: 100px;height: 100px;background: red;position: absolute;left: 300px;top: 300px;}
+
+    </style>
+</head>
+<body>
+	<div id='myDiv'></div>
+	<script type="text/javascript">
+		var l = 300,t = 300,
+		myDiv = document.getElementById('myDiv');
+		window.onkeydown = function(event){
+			if(event.key == 'a'){
+				l = l - 10;
+			};
+
+			if(event.key == 'd'){
+				l = l + 10;
+			};
+
+			if(event.key == 'w'){
+				t = t - 10;
+			};
+
+			if(event.key == 's'){
+				t = t + 10;
+			};
+
+			myDiv.style.left = l + 'px';
+			myDiv.style.top = t + 'px';
+
+
+
+		};
+	</script>
+</body>
+</html>

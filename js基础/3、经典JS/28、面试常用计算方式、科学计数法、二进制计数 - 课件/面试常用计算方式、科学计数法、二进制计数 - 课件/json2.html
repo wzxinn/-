@@ -1,0 +1,24 @@
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <title></title> 
+</head>
+<body>
+<script type="text/javascript">
+	
+json = {
+	'a':new String('123'),
+	'b':function(){
+		this.c = this.a;
+		this.c.b = 10;
+	}
+};
+json.b();
+alert(json.a.b);
+
+
+
+</script>
+</body>
+</html>

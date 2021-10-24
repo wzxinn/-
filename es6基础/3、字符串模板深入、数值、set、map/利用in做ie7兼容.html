@@ -1,0 +1,38 @@
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <title></title> 
+</head>
+<body>
+<script type="text/javascript">
+
+/*
+	ie7以下的版本不认识addEventListener()只能用attachEvent来代替
+	要注意的是addEventListener(click,函数)中  event只要写click就可以了
+	但是attachEvent要写成onclick
+*/
+//alert('attachEvent' in window);
+function addEvent(obj,event,fn){
+	'attachEvent' in window?obj.attachEvent('on'+event,fn):obj.addEventListener(event,fn);
+	/*
+	代码等同于
+	if(obj.attachEvent){
+		obj.attachEvent('on'+event,fn);
+	}
+	else{
+		obj.addEventListener(event,fn);
+	}
+	*/
+}
+addEvent(document,'click',function(){
+	alert(1);
+})
+
+
+
+
+
+</script>
+</body>
+</html>

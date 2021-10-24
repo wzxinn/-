@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+    /*
+        所有的东西都在object下，
+        使用Objec
+    */
+        let Array = [1, 2, 3, 4];
+    //查看Object的原型（方法）
+        console.log(Object.prototype);
+    //constructor 这个方法能精准的告诉 你是什么类
+        console.log(Array.constructor);
+    //输出原型，并且转成字符串
+        console.log(Object.prototype.toString.call(1));
+    //添加原型
+        Object.prototype.a = 10;
+        console.log([].a);
+    //array使用String的原型
+        var a = ['asdasd'];
+        console.log(String.prototype.split.call(a));
+    //原型链，子类可以使用父类的原型
+        function show(){
+		    console.log('this is function show')
+	    };
+	    show.prototype.a = function(){
+		    console.log('this is proto a')
+	    }
+	    var c =  new show;
+        c.a();
+    </script>
+</body>
+
+</html>

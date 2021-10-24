@@ -1,0 +1,28 @@
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <title></title> 
+</head>
+<body>
+<script type="text/javascript">
+	/*
+	setInterval(function(){
+		console.log(Math.random());
+
+	},50);
+*/
+//alert(Math.random()*2+3)
+
+	function random(min,max){
+		return parseInt(Math.random()*(max-min))+min;
+	}
+	setInterval(function(){
+		console.log(random(3,9))
+
+	},50)
+
+
+</script>
+</body>
+</html>

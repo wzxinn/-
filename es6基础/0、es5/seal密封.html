@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+
+<body>
+	<script type="text/javascript">
+		//seal的基础使用，将json封起来，不能再添加、删除属性了
+		//但是可以修改里面的属性值
+		var json = { a: 20 };
+		Object.seal(json);
+		//seal测试
+		json.b = 30
+		console.log(json.b)
+/*
+		function leo(){
+		
+		};
+		//一旦从新赋值 seal的效果失效
+		Object.seal(leo.prototype);
+		leo.prototype={
+			a:30
+		};
+		
+		console.log(new leo().a);
+		*/
+
+
+	//json.c = 30;
+	//console.log(json);
+
+
+
+	</script>
+</body>
+
+</html>

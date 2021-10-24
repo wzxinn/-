@@ -1,0 +1,51 @@
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <title></title> 
+</head>
+<body>
+	<script type="text/javascript">
+/*
+		async (异步)函数变体
+		什么叫异步
+
+		同步 就是一个一个做 头一个做完之前 后面的 不允许 动
+		异步 一块去做 不分你我 你干你的 我干我的
+
+		定时器 ajax
+		有一定的延时性
+		promise 保证 es6 异步函数
+		构造器函数
+
+		this.$http.get('/login',res=>{
+			this.$http.get('/getInfo',info=>{
+				this.$http
+			})
+		})
+
+		多重嵌套 -》 回调地狱
+
+		new Promise((res, rej)=>{
+			this.login(resolve)
+
+		}).then(x=>{
+			this.getInfo();
+		}).catch(x=>{
+			console.log('失败')
+		});
+
+		一堆then 
+*/
+//函数前边加一个async就可以让函数异步执行了
+		async function leo(){
+			throw new Error('失败了');
+		};
+		
+		leo().then(x=>1,x=>{
+			console.log('成功了');
+		})
+
+	</script>
+</body>
+</html>

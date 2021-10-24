@@ -1,0 +1,42 @@
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <title></title> 
+</head>
+<body>
+<script type="text/javascript">
+
+//keys
+//以数组的形式拿到keys
+		var a = {
+			a:10,
+			b:20
+		};
+		console.log(Object.keys(a));
+		//取函数的keys
+		function leo(){
+			this.a = 20;
+		};
+		leo.prototype = {
+			b:30,
+			c:40
+		}
+
+		console.log(Object.keys(new leo()));
+
+//values
+		console.log(Object.values(a));
+		console.log(Object.values(new leo()));
+
+//土办法
+		/*
+		var arr = [];
+		for(var i in a){
+			arr.push(i);
+		};
+		console.log(arr);
+		*/
+</script>
+</body>
+</html>

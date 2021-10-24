@@ -1,0 +1,37 @@
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <title></title> 
+    <style type="text/css">
+*{margin: 0;padding: 0;list-style: none;}
+#div1{width: 100px;height: 100px;
+background: red;position: absolute;left: 0;top: 0;
+-margin-left:20px;padding: 20px;
+-border: 10px solid black 
+}
+    
+
+    </style>
+</head>
+<body>
+<div id='div1'></div>
+<script type="text/javascript">
+
+	alert(getStyle(div1,'width'))
+	function getStyle(obj,name){
+		if(obj.currentStyle){
+			return obj.currentStyle[name]
+		}else{
+			return getComputedStyle(obj,false)[name]
+		}
+	}
+	//alert(div1.currentStyle['width'])
+    //alert(getComputedStyle(div1,false)['width'])
+	//alert(div1.clientWidth)
+	//alert(div1.offsetWidth)
+	//alert(div1.offsetWidth)
+
+</script>
+</body>
+</html>

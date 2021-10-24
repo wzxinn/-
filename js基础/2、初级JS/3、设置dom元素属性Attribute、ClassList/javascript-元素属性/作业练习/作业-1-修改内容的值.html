@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>修改文本框的值</title>
+    <style>
+                html, body, div, ul {
+            margin: 0;
+            padding: 0;
+        }
+        div {
+            width: 569px;
+        }
+        h2 {
+            background: #6BA542;
+            color: white;
+            font-size: 16px;
+            line-height: 30px;
+            font-weight: bold;
+            vertical-align: middle;
+            text-indent: 20px;
+            margin: 0;
+        }
+        li {
+            text-decoration: none;
+            border-bottom: 1px solid #eee;
+            line-height: 40px;
+        }
+        li p {
+            display: inline-block;
+            text-indent: 20px;
+            padding-right: 5px;
+            font-size: 16px;
+            color: gray;
+            line-height: 40px;
+            margin: 0;
+        }
+        li span {
+            color: #6BA542;
+            font-size: 16px;
+            font-weight: bold;
+            padding: 0 3px;
+            cursor: pointer;
+        }
+        img {
+            width: 16px;
+            height: 16px;
+            cursor: pointer;
+        }
+        input {
+            margin-left: 16px;
+            line-height: 22px;
+            vertical-align: middle;
+            font-size: 16px;
+            padding: 0 2px;
+        }
+        .hide {
+            display: none;
+        }
+    </style>
+    <script type="text/javascript">
+        /*
+            需要的效果：
+            点击 笔 的时候 上面的文字 隐藏 让下面的input 显示变成编辑状态
+            编辑状态的文字 为 上面的文字 
+            然后点击保存之后 input 隐藏 上面的文字变成 input 的内容 
+        */
+
+
+    </script>
+</head>
+<body>
+    <div>
+        <h2>分类名称</h2>
+        <ul>
+            <li>
+                <p>李游老师在线课堂</p>
+                <img src="pen.png" alt="pen">
+                <input type="text" value="" />
+                <span>保存</span>
+                <span>取消</span>
+            </li>
+            <li>
+                <p>李游老师在线课堂</p>
+                <img src="pen.png" alt="pen">
+                <input type="text" value="" />
+                <span>保存</span>
+                <span>取消</span>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

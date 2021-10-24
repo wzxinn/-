@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+
+<body>
+	<script type="text/javascript">
+		for (let i = 0; i < 10; i++) {
+			console.log(i);
+		};
+		//let - 变量不允许重复声明  允许重复赋值 可以防止变量泄露。此时在for外console.log(i);会提示i is not defined。
+		//const - 常量 变量不允许重复声明，也不允许重复赋值
+		//eg:
+		let bar = 100;
+		const bar = '1231';
+	</script>
+</body>
+
+</html>

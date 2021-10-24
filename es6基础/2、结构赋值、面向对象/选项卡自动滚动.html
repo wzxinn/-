@@ -1,0 +1,102 @@
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <title></title> 
+    <style type="text/css">
+input.active{
+	background: red;
+}
+
+#box > div{
+	width: 200px;height: 200px;background: #ccc;
+	display: none;
+}
+#box > div:first-of-type{
+	display: block;
+}
+
+
+#ccc > div{
+	width: 200px;height: 200px;background: #ccc;
+	display: none;
+}
+#ccc > div:first-of-type{
+	display: block;
+}
+
+    </style>
+</head>
+<body>
+<div id='box'>
+	<input type='button' value='1' class='active'>
+	<input type='button' value='2'>
+	<input type='button' value='3'>
+	<div>aaaaa</div>
+	<div>bbbbb</div>
+	<div>ccccc</div>
+</div>
+<div id='ccc'>
+	<input type='button' value='1' class='active'>
+	<input type='button' value='2'>
+	<div>aaaaa</div>
+	<div>ccccc</div>
+</div>
+<script type="text/javascript">
+	class tab {
+		constructor(x){
+			this.node = document.getElementById(x);
+			this.allIput = this.node.getElementsByTagName('input');
+			this.allDiv = this.node.getElementsByTagName('div');
+			this.index = 0;
+
+			this.init();
+		}
+		init(){
+			for(let i = 0;i < this.allIput.length;i++){
+				this.allIput[i].onclick = function(){
+					this.hide();
+					this.show(i);
+				}.bind(this);
+			}
+		}
+		hide(){
+			for(let i = 0;i < this.allIput.length;i++){
+				this.allIput[i].className = '';
+				this.allDiv[i].style.display ='none';
+			}
+		}
+		show(index){
+			this.allDiv[index].style.display ='block';
+			this.allIput[index].className ='active';
+		}
+
+
+	}
+
+	class autoTab extends tab{
+		constructor(x){
+			super(x);
+		}
+		autoPlay(){
+			setInterval(()=>{
+				this.index++;
+				if(this.index == this.allIput.length)this.index = 0;
+				this.hide();
+				this.show(this.index);
+			},1000);
+		}
+	}
+
+
+new tab('box')
+new autoTab('ccc').autoPlay();
+
+
+</script>
+
+
+
+
+</body>
+</html>

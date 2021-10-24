@@ -1,0 +1,60 @@
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <title></title>
+    <style type="text/css">
+*{margin: 0;padding: 0;list-style: none;}
+.darg{
+	width: 100px;height: 100px;background: black;position: absolute;
+}
+
+    </style> 
+</head>
+<body>
+<div class='darg'></div>
+
+<script type="text/javascript">
+	
+
+	function Darg(opt){
+		var _this = this;
+		this.opt = opt;
+		_this.classN = opt.className;
+		document.onmousedown = function(e){
+			var ev = e || event;
+			var iTarget = ev.srcElement || ev.target;
+			if(iTarget.className == _this.classN){
+				var l = ev.clientX - iTarget.offsetLeft;
+				var t = ev.clientY - iTarget.offsetTop;
+
+				document.onmousemove = function(e){
+
+					var ev = e || event;
+					iTarget.style.left = ev.clientX - l + 'px';
+					iTarget.style.top = ev.clientY - t + 'px';
+				}
+
+				document.onmouseup = function(){
+					document.onmousemove = document.onmouseup = null;
+				}
+				return false;
+			}
+
+
+		}
+
+
+	}
+
+	new Darg({
+		 className:'darg',
+		 unLeft:true,
+		 unTop:true,
+		 unRight:true,
+		 unBottom:true,
+		 unResize:true
+	});
+</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <title></title> 
+</head>
+<body>
+
+<script type="text/javascript">
+	onload = function(){
+
+		//function a(){ alert(1)};
+		
+		function a(){
+			return function(){
+				alert(1);
+			}
+		}
+		
+		document.getElementById('ipt').onclick = a();
+	}
+</script>
+</body>
+<input type='button' value='d' id='ipt'>
+</html>

@@ -1,0 +1,190 @@
+2009年   ES5   发布
+2011年   ES5.1 发布 正式成为ios国际标准
+2015.6年 ES6
+
+4大块
+1.JSON对象
+2.Object对象方法的一个扩展
+3.严格模式
+4.Array（数组）拓展
+
+1.JSON -> 对象 
+key->value  键值队
+key 双引号
+缩写形式  new Object();
+
+parse -> 把字符串转换成json
+
+1.第一个参数 就是必须是一个 正确格式的string 格式的json
+
+2.第二个参数 就是一个function 可以有两个参数 分别是 key 和 value
+key 对应着 你解析的json的key 
+value对应着 你解析的json的value
+
+stringify -> 把json对象转成字符串
+1.第一个参数 就是一个json
+2.函数 能帮咱们 过滤
+if(value == 30){
+	retrun undefined
+}
+else{
+	return value
+}
+
+3.推进
+1-10数字
+key值离左边多有少空格
+
+1.Object.getPrototypeOf;
+返回对象的原型
+prototype
+
+2.Object.keys
+以数组的形式 可以拿到对象的属性
+
+3.Object.values
+以数组的形式 可以拿到对象的属性值
+
+4.Object.create
+创建一个具有指定原型并且可以选择性的包含指定属性的对象
+
+如果不想指定原型就放入一个 null
+
+{
+	value:内容
+	writable:false/true   false 不允许 修改
+	enumerable:false/true  false 不允许枚举
+	configurable:false/true false 不允许删除
+}
+
+for in
+object.keys
+JSON.stringify
+
+delete 对象.属性
+
+json  三个主要的属性默认都是为true
+
+
+Object.seal(); 密封 、 封条
+1.对象不可以拓展，不能往里面放入新的属性。
+2.configurable都变成false
+
+一旦从新赋值 seal的效果失效
+
+Object.preventExtensions()
+1.对象不可以拓展，不能往里面放入新的属性。
+一旦从新赋值 preventExtensions的效果失效
+
+Object.freeze(); 结冰、冻结（财产）
+1.configurable 所有的都是 false
+2.writable 所有的都是 false
+3.对象不可以拓展，不能往里面放入新的属性。
+
+一旦从新赋值 freeze的效果失效
+
+//声明对象的方法
+1.var json = {};
+2.var obj = new Object();
+3.function leo(){}; new leo();
+4.var obj = Object.create(null,{});
+5.class
+
+Object.defineProperty();
+对象，属性，修改或者添加的值
+方法会直接在一个对象上定义一个新属性，或者修改一个对象的现有属性，并且返回这个对象
+
+Object.isSealed();
+只会返回true 和 false
+无法在对象中修改现有属性的特性
+且无法向对象中添加新属性 
+返回 true 
+其余 返回 false
+
+Object.isExtensible();
+对象是否可拓展，如果不能拓展就返回false 能拓展就是true
+
+
+Object.isFrozen();
+只会返回true 和 false
+无法在对象中修改现有属性的特性 configurable = false
+且无法向对象中添加新属性 
+不能修改属性的内容 writable = false
+
+hasOwnProperty()
+确定某个对象是否具有指定的一个属性
+如果有 就返回一个 true  没有的情况下 那就返回一个 false
+实例化对象 和 in 有区别
+
+Object.setPrototypeOf
+__proto__
+设定对象的原型链
+
+继承- 儿子继承父亲的 啃老 父亲不能拿儿子的
+
+
+严格模式
+1.消除了一堆js上的静默错误，通过改变它们来抛出错误。
+2.严格模式修复了js引擎执行优化的错误。严格模式可以让js运行速度更快。
+3.严格模式金钟了es的未来的版本可能会定义的一些语言。
+
+ie8以前不兼容
+
+'use strict';
+
+严格模式使用方式 就是在需要严格模式之前写上 'use strict'就ok
+
+1.不var 的变量不认为是全局的。
+2.严格会引起静默失效 。 
+像一些永恒的变量 是不允许赋值的 例如：window、top、NaN
+writable:false
+
+3.试图删除不可删除的属性也会报错。(在非严格模式下不会奇效，但是不会报错);
+
+4.属性更规整了，不允许出现不规整的属性赋值.
+false.true = 1;
+(222).kkkk = 1;
+'width'.height = 10;
+
+5. 增加了一些关键字 eval 、 arguments不允许赋值
+
+6.函数内的正确的参数使用
+
+Array
+1.every
+
+检测数据的所有元素是否符合条件 ，必须都符合 那么就返回true，如果有一个不符合就返回false
+一旦条件不满足 就不继续 往下看了
+
+2.some
+检测数据的所有元素是否符合条件 ，只要有一个符合的就返回true
+除非都不符合false
+一旦条件满足 就不继续 往下看了
+
+3.filter
+过滤
+检查所有的元素 ，通过你的return过滤条件， 过滤出一个新的数组
+
+4.forEach
+
+参数是一个函数
+函数里面的参数 
+有三个值
+第一个值 分别对应的咱们数组的每一个值
+第二个值 索引值
+第三个值 就是数组的本身
+
+5.map
+参数是一个函数
+函数里面的参数 
+有三个值
+第一个值 分别对应的咱们数组的每一个值
+第二个值 索引值
+第三个值 就是数组的本身
+会返回一个新数组，可以通过return 来操作新数组的内容
+
+
+
+
+
+

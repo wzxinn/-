@@ -1,0 +1,36 @@
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <title></title> 
+</head>
+<body>
+
+<script type="text/javascript">
+	onload = function(){
+		var a = document.createElement('div');
+		a.id = 'mmm';
+		a.style.cssText = 'width:100px;height:100px;background:red';
+		a.onclick = function(){
+			alert(1);
+		}
+		s1.appendChild(a);
+
+		var a = document.createElement('div');
+		a.id = 'mmm';
+		a.style.cssText = 'width:100px;height:100px;background:black';
+		a.onclick = function(){
+			alert(1);
+		}
+		s1.appendChild(a);
+	}
+
+</script>
+<div id='l' name='hanqiliang'>
+	<div id='s' name='hanqiliang'>
+		<div id='b'></div>
+	</div>
+	<div id='s1'></div>
+</div>
+</body>
+</html>

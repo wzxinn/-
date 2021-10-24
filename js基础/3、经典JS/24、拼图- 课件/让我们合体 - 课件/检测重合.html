@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>检测重合</title>
+	<style>
+		#div2 { width: 100px; height: 100px; background: #fe6601; margin-left: 223px; margin-top: 147px; }
+		#div1 { width: 100px; height: 100px; background: #1b8da9; position: absolute; top: 0; left: 0; line-height: 100px; text-align: center; color: #fff; }
+	</style>
+</head>
+<body>
+	<div id="div1">让我们合体！</div>
+	<div id="div2"></div>
+
+	<script type="text/javascript">
+	div1.onmousedown = function(e){
+		var ev = e || event;
+		var l = ev.clientX - this.offsetLeft;
+		var t = ev.clientY - this.offsetTop;
+		document.onmousemove = function(e){
+			var ev = e || event;
+			div1.style.left = ev.clientX - l + 'px';
+			div1.style.top = ev.clientY - t + 'px';
+			if(div1.offsetLeft == div2.offsetLeft && div1.offsetTop == div2.offsetTop){
+				alert('我们合体了');
+			}
+
+		};
+		document.onmouseup = function(){
+			document.onmousemove = document.onmouseup = null;
+		};
+		return false;
+	}
+
+
+
+	</script>
+</body>
+</html>

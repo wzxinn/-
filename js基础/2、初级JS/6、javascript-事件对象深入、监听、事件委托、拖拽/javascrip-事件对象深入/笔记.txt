@@ -1,0 +1,44 @@
+addEventListener('放入事件名称（不用加on）',fn,true/false)
+
+能做到事件叠加 不会覆盖之前的事件
+
+一般情况下不要加第三个参数 有兼容问题
+
+true 代表是事件捕获情况下执行
+
+false 
+事件冒泡情况下执行
+
+removeEventListener(放入事件名称（不用加on）',函数名称)
+
+精准解除
+
+事件委托/事件代理
+
+就是给予父级元素 事件
+
+
+父级元素 可以找到子级事件源
+
+通过判断 事件源 classname  nodename id
+
+找到咱们需要的事件源 给予js 脚本
+
+最大的好处 可以控制 未来（动态生成）的元素
+
+会有兼容问题
+
+target  ie 认为是undefined
+srcElement  低版本 火狐 认为 undefined
+
+offsetTop/left  元素距离父及元素的便宜值
+
+offsetWidth/Height  
+返回元素的宽度 / 高度
+border padding width/height
+
+
+
+
+
+

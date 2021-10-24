@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Access-Control-Allow-Origin" content="*">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var ajax = new XMLHttpRequest();
+        //三个参数，请求类型，请求地址，同步(false)或异步(true)
+        ajax.open('get','http://127.0.0.1:80/1.php',true);
+        ajax.send();
+        ajax.onload=()=>{
+            //返回信息
+            console.log(ajax.responseText);
+            console.log(ajax.status);
+        }
+        ajax.onerror = function(){
+            //返回状态码
+            console.log(ajax.status);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+<head>
+<style>
+*{ margin:0; padding:0; list-style:none; }
+#div1{ width:100px; height:100px; position:absolute; background:#ccc;}
+#bto{ float:right;}
+</style>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+</head>
+<script>
+window.onload=function()
+{
+	oDiv=document.getElementById('div1');
+	oBtn=document.getElementById('bto');
+	var disX = disY = 0;
+	var aPos = [{x:oDiv.offsetLeft, y:oDiv.offsetTop}]
+	
+	oDiv.onmousedown=function(ev)
+	{
+		var oEvent=ev||event;
+		disX=oEvent.clientX-oDiv.offsetLeft;
+		disY=oEvent.clientY-oDiv.offsetTop;
+		document.onmousemove=function(ev)
+		{
+			var oEvent=ev||event;
+			var l=oEvent.clientX-disX;
+			var t=oEvent.clientY-disY;
+			var maxL = document.documentElement.clientWidth - oDiv.offsetWidth;
+			var maxT = document.documentElement.clientHeight - oDiv.offsetHeight;
+			l = l < 0 ? 0 : l;
+			l = l > maxL ? maxL : l; 
+			t = t < 0 ? 0 : t;
+			t = t > maxT ? maxT : t;
+			oDiv.style.left = l + "px";
+			oDiv.style.top = t + "px";
+			aPos.push({x:l, y:t})	
+			
+		};
+		document.onmouseup=function()
+		{
+			document.onmouseup=document.onmousemove=null;
+		};
+		return false ;
+	};
+	oBtn.onclick = function ()
+	{
+		
+		var timer = setInterval(function ()
+		{
+			var oPos = aPos.pop();
+			if(oPos) 
+			{
+				oDiv.style.left = oPos.x + "px";
+				oDiv.style.top = oPos.y + "px";
+			}
+			else
+			{ 
+				clearInterval(timer)	
+			}
+		}, 30);
+		
+	};
+	
+};
+</script>
+
+<body>
+<div id="div1"></div>
+<input type="button" id="bto" value="回放" />
+</body>
+</html>

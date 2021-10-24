@@ -1,0 +1,30 @@
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <title></title> 
+</head>
+<body>
+<script type="text/javascript">
+	/*
+		Object.isFrozen();
+		只会返回true 和 false
+		无法在对象中修改现有属性的特性 configurable = false
+		且无法向对象中添加新属性 
+		不能修改属性的内容 writable = false
+
+	*/
+	var json = {'leo':'18'};
+
+	Object.seal(json);
+	
+	Object.defineProperty(json,'leo',{
+		'writable':false
+	});
+	
+	console.log(Object.isFrozen(json))
+
+
+</script>
+</body>
+</html>

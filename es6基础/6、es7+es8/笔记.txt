@@ -1,0 +1,198 @@
+ES7 
+
+数组的拓展方法 includes
+可以查找一个值在不在数组中，若在，则返回true，不在就返回false
+
+[1,2,3].includes(1)  //true
+[1,2,3].includes(5)  //false
+
+['a',2,3].includes('a')  //true
+
+['a',2,3].includes('b')  //false
+
+关于参数：
+可以放2个
+第一个参数 就是要搜索的值
+第二个参数 就是开始的索引，索引是从0开始
+
+简单来说 他会使用 === 进行比对 如果都是 true 那么就是true
+
+精准性：
+必须要求很精准
+
+console.log([['a'],'b','c'].includes('a',0))// false
+
+indexOf 和 includes 区别
+console.log([1,NaN,2,3].indexOf(NaN))   //-1 没有找不到
+console.log([1,NaN,2,3].includes(NaN))
+//1 能找到
+
+1.他们对NaN处理方式不同 
+2.不关心索引位置的情况下 我建议使用 includes
+3.如果想知道某一个值在什么位置 只能使用 indexOf
+
+求幂运算符（**）
+
+js本身有bug  精度问题
+
+1.1+2.2 !=3.3 
+
+3的3次幂  3*3*3 
+3**3          == 27
+
+效果同
+
+Math.pow(3,3) == 27
+
+
+可以 **= 快捷运算
+
+负的几次幂 怎么算
+
+5的负2次幂
+
+5的2次幂 / 1
+
+25/1 = 0.04
+
+如果 底数是0 负数的幂数出现 Infinity
+
+5*5*5 = 125/1
+
+有理数的偶数次幂一定是正数
+
+精度问题
+
+x ** y
+
+ruby x ** y
+
+作用域
+
+作用在一定区域的内容
+
+es6 块级作用域 {}
+
+任何函数都是一个作用域
+
+儿子能拿爸爸的
+
+在任何函数作用域中 如果使用es6的解构赋值 就不要使用 严格模式  不然会报错
+
+function leo(one,two = 1){
+	"use strict";
+	console.log(one);
+};
+leo(1,2);
+会报错
+
+function leo(one,two){
+	"use strict";
+	console.log(one);
+};
+leo(1,2);
+ok 妥妥的
+
+ES 8 
+
+async (异步)函数变体
+什么叫异步
+
+同步 就是一个一个做 头一个做完之前 后面的 不允许 动
+异步 一块去做 不分你我 你干你的 我干我的
+
+定时器 ajax
+有一定的延时性
+promise 保证 es6 异步函数
+构造器函数
+
+this.$http.get('/login',res=>{
+	this.$http.get('/getInfo',info=>{
+		this.$http
+	})
+})
+
+多重嵌套 -》 回调地狱
+
+new Promise((res, rej)=>{
+	this.login(resolve)
+
+}).then(x=>{
+	this.getInfo();
+}).catch(x=>{
+	console.log('失败')
+});
+
+一堆then 
+
+es8引入了 async，让大家方便一点本体就是promise
+
+async function leo(f){
+	//console.log(1);
+	return f;
+};
+
+相当于：
+
+function leo(f){
+	//console.log(f)
+	return new Promise((re,rj)=>{
+		re(f);
+	});
+}
+
+声明方式
+
+async function leo(){};
+let leo = async function(){};
+const leo = {async leo(){}};
+const leo = async ()=>{};
+
+await
+
+只能和 async 配合
+
+await 后面是紧跟着一个Promise对象
+如果没有 会立即转成一个Promise.resolve的对象。
+
+如果没有return 它不会默认是成功
+如果想执行 reject 就不用加return 
+
+只会执行一个结果 如果执行了 reject 后面就会中断执行
+
+try{}
+catch(e){
+	
+}
+
+entries
+
+1.帮助咱们解析对象,变成一个可枚举的键值对二维数组
+
+数组好循环的就叫枚举
+
+Object.values
+
+只会返回一个 数组里面是value值
+
+padStart/padEnd
+
+字符串补齐长度用的 Start 头部补齐 / End尾部补齐
+
+如果你给予的长度 没有默认的长度长 那么它不会改变  其余的情况下 会自动添加 空格
+
+getOwnPropertyDescriptors
+getOwnPropertyDescriptor(对象，对象的属性)
+主要的作用是返回属性的描述对象
+
+
+var a = 1;
+
+a = 1;
+
+
+
+
+
+
+

@@ -1,0 +1,24 @@
+<script>
+	function a(){
+		//c 是局部变量 外面拿不到
+		var c = 10;
+
+		function b(){
+			var f = 20;
+			console.log(c);
+			function d(){
+				console.log(c)
+			}
+		};
+		b();
+		console.log(f);
+	};
+	a();
+
+
+
+
+
+
+
+</script>

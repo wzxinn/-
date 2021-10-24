@@ -1,0 +1,51 @@
+BOM
+
+js操作浏览器的
+
+location  可以查看地址url信息
+
+href 返回或者设置 url地址
+
+history
+
+back() 上一个网页
+
+forward() 下一个网页
+
+go() 直接放入数字  -2 上两个
+				 2 下两个
+
+
+alert 警告窗
+
+confirm  确认窗 两个选项 如果 取消返回一个false 
+
+如果确定了 返回一个true
+
+
+navigator  可以返回浏览器信息 但是兼容性很差
+
+userAgent  可以返回 浏览器用户信息 各个浏览器都有这个 值
+可以看 使用的是 什么浏览器
+
+谷歌 Chrome
+火狐 firefox
+ie   MS IE
+
+screen 可以返回屏幕信息的对象
+
+height   电脑的显示器的height
+
+width    电脑的现实的width
+
+availHeight  除了信息栏的高度
+
+availWidth   除了信息栏的宽度
+
+screenLeft/X 浏览器距离屏幕左边的距离
+
+screenTop/Y  浏览器距离屏幕上面的距离
+
+innerWidth/Height 浏览器内容的宽度 和 高度
+
+outerWidth/Height 浏览器外部的宽度 和 高度

@@ -1,0 +1,35 @@
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <title></title> 
+</head>
+<body>
+	<script type="text/javascript">
+//前边有个reject后面还要执行resolve		
+/*
+		async function leo(){
+			try{
+				await Promise.reject(1);
+			}
+			catch(e){
+				return await e;
+			}
+			
+		};
+
+		leo().then(x=>console.log(x)).catch(x=>console.log(x));
+*/
+//第二种写法
+		async function leo(){
+			await Promise.reject('出错了').catch(e=>console.log(e));
+			return await Promise.resolve('hello world!')
+			
+		};
+
+		leo().then(x=>console.log(x)).catch(x=>console.log(x));
+
+
+	</script>
+</body>
+</html>

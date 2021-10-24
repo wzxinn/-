@@ -1,0 +1,73 @@
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <title></title> 
+    <style type="text/css">
+*{margin: 0;padding: 0;list-style: none;}
+#div1{width: 100.5px;height: 100.5px;
+	-filter:alpha(opacity=30);
+background: red;position: absolute;left: 0;top: 0;
+-margin-left:20px;-padding: 20px;
+border: 0px solid black 
+}
+    
+
+    </style>
+</head>
+<body>
+<div id='div1'></div>
+<script type="text/javascript">
+
+	function getStyle(obj,name){
+		if(obj.currentStyle){
+			return obj.currentStyle[name]
+		}else{
+			return getComputedStyle(obj,false)[name]
+		}
+	};
+
+	move(div1,'opacity',0,0.1,50,function(){
+		move(div1,'opacity',1,0.1,20,function(){
+			move(div1,'height',300,5,30);
+		});
+	});
+	function move(obj,curName,iTarget,speed,timer,fn){
+		clearInterval(obj.timer);
+		//console.log(obj.timer);
+		obj.timer = setInterval(function(){
+			
+			//
+
+			var cur = curName == 'opacity'?parseFloat(getStyle(obj,curName)):parseInt(getStyle(obj,curName));
+	//		console.log(cur);
+			//alert(cur);
+			//199.5 == 200
+			//200.5 == 200;
+			if(cur == iTarget){
+			//	cur = iTarget
+				
+				fn && fn();
+				clearInterval(obj.timer);
+				return;
+			}
+
+			//console.log(speed)
+			cur = cur<iTarget?(cur+=speed):(cur-=speed)
+
+			if(curName == 'opacity'){
+				obj.style[curName] =cur;
+			}else{
+				obj.style[curName] =cur +'px';
+			}
+			
+		},timer);
+
+
+	}
+
+
+
+</script>
+</body>
+</html>

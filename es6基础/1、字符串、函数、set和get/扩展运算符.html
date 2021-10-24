@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+
+<body>
+
+	<script type="text/javascript">
+
+	/*
+	扩展运算符 函数中的参数用 …x
+	代表 实参为数组 进来的 x变量
+	*/
+		function show(y = [1, 23, 3], ...x) {
+			//这里的y被1覆盖了，所以x是[2,3,4]
+			//它类似arguments，但不同的是拓展运算符是真正的数组，arguments不能用数组的方法;
+			console.log(x)
+		};
+		show(1, 2, 3, 4);
+
+	//在数组中可以起到合并数组的作用,效果类似于concat
+		var a = [1];
+		var b = [2];
+		var c = [3];
+		console.log([...a, ...b, ...c])
+
+	//把所有的div放到一个数组中
+		let a = `<div></div>`;
+		document.write(a.repeat(5));
+
+		/*
+		//原来的写法
+		var c = [];
+		var d = document.getElementsByTagName('div');
+		for(var i =0;i < d.length;i++){
+			c.push(d[i])
+		};
+		console.log(c)
+		*/
+	//es6中可以直接
+		console.log([...document.querySelectorAll('div')]);
+	</script>
+</body>
+
+</html>

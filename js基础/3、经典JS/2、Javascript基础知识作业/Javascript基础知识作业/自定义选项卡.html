@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<style>
+span{ font:16px Arial, Helvetica, sans-serif; color:black; padding-left:50px}
+.div1{ width:27px; height:27px; background:url(img/nnk2.gif) no-repeat left top; float:left; margin-left:25px; margin-top:10px; cursor:pointer; }
+.div2{ width:27px; height:27px; background:url(img/nnk.gif) no-repeat left top; float:left; margin-left:25px; margin-top:10px; cursor:pointer; }
+.div3{ width:27px; height:27px; background:url(img/gou2.gif) no-repeat left top; float: left; margin:10px 0 0 25px; cursor:pointer;}
+.div4{ width:27px; height:27px; background:url(img/gou.gif) no-repeat left top; float: left; margin:10px 0 0 25px; cursor:pointer;}
+#div1 span{ float:left; font:16px/50px Arial, Helvetica, sans-serif}
+#div2 span{ float:left; font:16px/50px Arial, Helvetica, sans-serif}
+#div2{ clear:both}
+.span2{ clear:both; float:left}
+</style>
+<script>
+window.onload=function()
+{
+  var oDiv=document.getElementById('div1');
+  var oDiv2=document.getElementById('div2');
+  var aDiv=oDiv.getElementsByTagName('div');
+  var aDiv2=oDiv2.getElementsByTagName('div');
+  var i=0;
+  
+  for(i=0;i<aDiv.length;i++)
+  {
+	 aDiv[i].onclick=function()
+	 {
+		 for(i=0;i<aDiv.length;i++) 
+		 {
+			aDiv[i].className='div1' 
+		 }
+		 this.className='div2'
+	 }
+  }
+  
+  for(i=0;i<aDiv2.length;i++)
+  {
+	 aDiv2[i].onclick=function() 
+	 {
+		if(this.className=='div3')
+		{
+		  this.className='div4'	
+		}
+		else
+		{
+		 this.className='div3'	
+		}
+	 }
+  }
+  
+}
+</script>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<span>1.你是变态么？</span><br />
+<div id="div1">
+ <span>是</span><div class="div1"></div>
+ <span>不是</span><div class="div1"></div>
+</div>
+<span class="span2">2.你喜欢什么国家？</span>
+<div id="div2">
+ <span>中国</span><div class="div3"></div>
+ <span>日本</span><div class="div3"></div>
+ <span>朝鲜</span><div class="div3"></div>
+ <span>美国</span><div class="div3"></div>
+ <span>新西兰</span><div class="div3"></div>
+ <span>英国</span><div class="div3"></div>
+</div>
+</body>
+</html>

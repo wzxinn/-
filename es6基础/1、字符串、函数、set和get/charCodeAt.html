@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+</head>
+
+<body>
+
+    <script type="text/javascript">
+        //字符串与编码互转
+        let a = '李';
+        console.log(a.charCodeAt(0));
+        console.log(String.fromCharCode(97));
+        /*
+                charCodeAt 获取编码
+                String.fromCharCode(编码) 能让编码转成字符
+                \u4e00 - \u9fa5是汉字在utf-8中的编码范围
+        */
+        //输出汉字字典
+        let name = '';
+        for (let i = 0x4e00; i < 0x9fa5; i++) {
+            name += String.fromCharCode(i);
+        };
+        document.body.innerHTML = name;
+
+    </script>
+</body>
+
+</html>

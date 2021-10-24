@@ -1,0 +1,72 @@
+一.字符串篇
+字符串模版 深入
+1.模版里面可以里面放入函数及传参 
+1.1 数组的map 深解
+map  用法跟find ／ findIndex 差不多
+返回的不一样
+最后 会返回大数组
+2.标签模版
+3.模板字符串嵌套
+4.字符串的String.raw``方法 
+可以取消转义
+
+二.number篇
+1.什么叫做二进制？
+15
+1 2 4 8 16 32
+1  1  1  1 0  0  0  0  0
+2.2进制 0b   
+0b后面放真正的二进制 但是反着写
+
+3.特殊运算  位运算 | &  次方运算<<  >> 
+|| 或 
+&& 和
+|  &位运算
+运算优先级 没有 + - * ／ 高
+
+3<<2
+3*2*2
+
+
+4.Number.isInteger
+判断是否适一个整数 如果是 就返回true 不是 就是false
+
+5.isNaN parseInt parseFloat
+6.Math.pow()
+几次幂
+Math.pow(4,4)
+4*4*4*4
+
+
+三.方法篇
+1.in
+‘属性’ 是否在 该对象上
+2.for of
+{key,value}
+键值
+key
+
+3.set -> add  / has / size / keys / values ／delete ／clear ／entries
+set - []
+[1,1,1,1]
+set[1]
+
+特性 禁止重复
+add 添加数据 
+has 查找 有没有 该数据
+size 类似于length 指的是长度
+keys／values 一个东西
+delete 放入你删除的值
+clear 直接清除
+和数组是好基友
+
+4.map 用法 set ／get ／ has ／ delete ／ clear 接收数组参数
+
+不允许重复存key
+
+demo  
+1.数组去重 
+2.set版选项卡
+
+
+

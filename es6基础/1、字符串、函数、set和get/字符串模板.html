@@ -1,0 +1,28 @@
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <title></title> 
+</head>
+<body>
+
+<script type="text/javascript">
+//字符串模板用法  `${}`  里边可以放变量，json等
+let json = {
+	'div':`<div></div>`,
+	'span':`<span></span>`
+}
+document.write(`${json.div+json.span+json.div}`)
+
+//模板内可以放运算符，用函数名+``也可以运行函数
+let a = '5';
+let b = '10';
+console.log(`${1+2}`)
+
+function show(){
+	console.log(1);
+};
+show``;
+</script>
+</body>
+</html>

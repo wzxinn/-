@@ -1,0 +1,50 @@
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <title></title> 
+</head>
+<body class='leo'>
+
+<script type="text/javascript">
+
+	/*
+		Object.setPrototypeOf
+		__proto__
+		设定对象的原型链
+		Object.setPrototypeOf(子级,父级);
+	*/
+
+//基础用法
+
+	/*
+	var obj = {x:1};
+	var obj2 = {y:10};
+	//把obj2挂到obj上，使obj能使用obj2的东西，但obj2不能用obj的东西，类似继承
+	Object.setPrototypeOf(obj,obj2);
+	console.log(obj2.x)//这里的obj2是父级，obj是子级
+	*/
+
+	function leo(){};
+	function leo2(){};
+
+	leo.prototype = {
+		a:function(){
+			alert(1);
+		}
+	};
+
+Object.setPrototypeOf(leo2.prototype,leo.prototype);
+leo2.prototype.c = 10;
+console.log(new leo().c)
+//console.log(new leo2());
+//new leo2().a();
+//leo2.prototype = new leo();
+//new leo2().a();
+
+
+
+
+</script>
+</body>
+</html>

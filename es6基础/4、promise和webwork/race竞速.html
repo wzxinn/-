@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+
+<body>
+
+
+	<script type="text/javascript">
+
+		/*
+			race可以竞速
+			race后的所有promise会同时执行，但只有最快的那个promise能够生效
+		
+		*/
+
+		Promise.race([new Promise((succ, error) => {
+		//setTimeout的第三个参数是给setTimeout第一个参数传参的参数
+		//例如setTimeout(error, 1000, '1');就是把'1'传给error
+			setTimeout(error, 1000, '1');
+		}), new Promise((succ, error) => {
+			setTimeout(succ, 1200, '2');
+		}), new Promise((succ, error) => {
+			setTimeout(succ, 1400, '3');
+		})]).then((x) => {
+			console.log(x + 'suss');
+
+		}, (x) => {
+			console.log(x + 'error')
+		})
+
+
+
+	</script>
+
+</body>
+
+</html>

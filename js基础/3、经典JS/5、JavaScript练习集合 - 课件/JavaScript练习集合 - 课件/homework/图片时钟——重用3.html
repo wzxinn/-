@@ -1,0 +1,69 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+
+</head>
+
+<body style="background:#CC00FF; color:white; font-size:50px;">
+北京时间：
+<div id="div1">
+	<img src="img/5.png" />
+    <img src="img/0.png" />
+    :
+    <img src="img/0.png" />
+    <img src="img/0.png" />
+    :
+    <img src="img/0.png" />
+    <img src="img/0.png" />
+</div>
+伦敦时间：
+<div id="div2">
+	<img src="img/0.png" />
+    <img src="img/0.png" />
+    :
+    <img src="img/0.png" />
+    <img src="img/0.png" />
+    :
+    <img src="img/0.png" />
+    <img src="img/0.png" />
+</div>
+纽约时间：
+<div id="div3">
+	<img src="img/0.png" />
+    <img src="img/0.png" />
+    :
+    <img src="img/0.png" />
+    <img src="img/0.png" />
+    :
+    <img src="img/0.png" />
+    <img src="img/0.png" />
+</div>
+<script type="text/javascript">
+
+move();
+function move(){
+    var oDate = new Date();
+    var oHo = toDou(oDate.getHours())+'';
+    var oMin = toDou(oDate.getMinutes())+'';
+    var oSe = toDou(oDate.getSeconds())+'';
+    var allDate = oHo+oMin+oSe;
+    //alert(allDate);
+
+    var aImg = div1.getElementsByTagName('img');
+    for(var i = 0;i < aImg.length;i++){
+        aImg[i].src = 'img/'+allDate.charAt(i)+'.png';
+    };
+
+}
+
+setInterval(move,1000);
+
+function toDou(Num){
+    return (Num<10 && Num>0)?'0'+Num:Num;
+};
+
+</script>
+</body>
+</html>

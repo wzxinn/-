@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<style>
+div{ width:100px; height:100px; background:green; margin-top:10px}
+</style>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<input type="button" id="bto" value="变红" />
+<input type="button" id="bt" value="变红" />
+<input type="button" id="bt1" value="变红" />
+<input type="button" id="bt2" value="变红" />
+<input type="button" id="bt3" value="变红" />
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+
+<script type="text/javascript">
+  var odiv=document.getElementsByTagName("div");
+	bto.onclick=function(){
+		for(var i=0;i<odiv.length;i++){
+		odiv[i].style.background='red';
+		}
+	}
+	var j=0;
+	bt.onclick=function(){
+	do{
+		odiv[j].style.background='red';
+		j++;
+	}
+	while(j<odiv.length)
+	}
+	
+	
+	bt1.onclick=function(){
+		var c=0;
+	while(c<odiv.length){
+		odiv[c].style.background='red'
+		c++
+	}
+	}
+	
+	bt2.onclick=function(){
+			var arr=[];
+			for(var i=0;i<odiv.length;i++){
+				arr.push(odiv[i])
+			}
+			var i=0;
+			for(i  in arr){
+				odiv[i].style.background = 'red'	
+			}
+	}
+	
+	bt3.onclick=function(){
+				var a=[odiv[0],odiv[1],odiv[2],odiv[3]];
+				a.forEach(function(x){
+					x.style.backgroundColor='red'
+				})
+			}
+</script>
+
+
+</body>
+</html>

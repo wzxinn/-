@@ -1,0 +1,48 @@
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <title></title> 
+    <style type="text/css">
+#outNode{width: 500px;height: 500px;border: 1px solid black;position: absolute;left: 0;top: 0;right: 0;bottom:0;margin: auto;}   
+#outNode > div{float: left;} 	
+
+
+    </style>
+</head>
+<body>
+	<input type="button" value='点击变色' name="">
+	<div id='outNode'>
+		
+	</div>
+	<script type="text/javascript">
+	/*
+		outNode 里面的元素
+	*/	
+	var outNode = document.getElementById('outNode');
+	for(var i = 0;i < 20;i ++){
+		for(var j = 0; j < 20;j ++){
+			var oDiv = document.createElement('div');
+			oDiv.style.width = '25px';
+			oDiv.style.height = '25px';
+			outNode.appendChild(oDiv);
+		}
+	};
+
+	/*
+		已知目前里面有400个div元素，点击按钮第奇数次
+		让奇数的变成黑色/偶数的变成红色
+		点击按钮第偶数次
+		让奇数的变成红色/偶数的变成黑色
+		
+
+
+	*/
+
+
+
+
+
+	</script>
+</body>
+</html>

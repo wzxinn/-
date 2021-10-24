@@ -1,0 +1,35 @@
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <title></title> 
+</head>
+<body>
+<script type="text/javascript">
+
+/*
+	3.filter
+	过滤
+	检查所有的元素 ，通过你的return过滤条件， 过滤出一个新的数组
+*/
+	var arr = [1,2,3,'5','7',null,document.body];
+
+	var arr2 = arr.filter(function(x){
+		//console.log(x)
+		//return typeof x == 'number';
+		return x >= 3;
+	});
+	console.log(arr2);
+	/*
+	var arr2 = [];
+	for(var i = 0;i < arr.length;i++){
+		typeof arr[i] == 'number' && arr2.push(arr[i])
+	};
+	console.log(arr2);
+	*/
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <title></title> 
+</head>
+<body>
+
+<script type="text/javascript">
+	function show(){
+		function show2(){
+			alert(1);
+			//return 10;
+		}
+		return show2();
+	};
+	alert(show());
+
+	//function show(){
+	//	return function (){
+	//		alert(1);
+	//	}
+	//};
+	//alert(show());
+</script>
+</body>
+
+</html>

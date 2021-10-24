@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style type="text/css">
+		.outNode>div {
+			width: 200px;
+			height: 200px;
+			background: #ccc;
+			display: none;
+		}
+
+		.outNode>div:first-of-type {
+			display: block;
+		}
+	</style>
+</head>
+
+<body>
+	<script type="text/javascript">
+		/*
+			1.标签模板就是反单引号括起来的``
+			2.
+		*/
+		//传入obj用querySelectorAll返回选中的内容
+		const $ = obj => [...document.querySelectorAll(obj)];
+
+		var jsonData = {
+			'topValue': ['李万宇', '申瑞', '王凯'],
+			'bottomInner': ['瘦了', '美了', '挣钱了']
+		}
+
+
+		createNode = json => `
+	<div class=outNode>
+		${json.topValue.map(
+			//这个map循环出了三个button类型的input
+			//.join() 数组转字符串，括号内写分隔符，默认是逗号
+			(v) => `<input type=button value=${v}>`).join('')
+			}
+		${json.bottomInner.map((v) =>
+				//这个map循环出了三个div
+				`<div>${v}</div>`).join('')}
+	</div>`;
+
+		document.body.innerHTML = createNode(jsonData)
+		//console.log(createNode(jsonData));
+		/*
+			下面是赋予事件的代码
+		*/
+		//outNode是最外层盒子，>div代表选择其后代div
+		let allDiv = new Set($('.outNode>div'));
+		let allInput = new Set($('input'));
+		//...拓展运算符将allInput转成数组格式，再使用forEach进行遍历
+		//i代表标签元素,index代表下标
+		[...allInput].forEach((i, index) => {
+			//给allInput中的所有元素添加onclick事件
+			i['onclick'] = x => {
+				//让所有的div不可见
+				[...allDiv].forEach((node) => node.style.display = 'none');
+				//让与input的下标值对应的div显示
+				[...allDiv][index].style.display = 'block';
+			}
+		});
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,121 @@
+es6 es2015
+介绍ecma
+
+ECMAscript -> ecma / es
+actionscript -> flash
+
+1996 es1   提出诞生 网景浏览器 我们支持javascript
+1997 es2   提出来 ie6 我们也支持 网景也支持 浏览器大战
+1998 es3   提出来 ie6 -》支持 windows 系统 -》sunos 网景 不行-》 火狐
+2007 es4   提出来 做的太激进 我们没发支持
+2008 es3.1 退化版 html5  -harmonious
+2009 es5   草案
+2010 es5   通过   
+2011 es6   草案
+2013 es6   通过
+2014       chrome  30% html5 全面支持 - 移动端ok
+2015 es6   chrome  60% 火狐 30%
+2016 es6   chrome  90%+
+
+es6/es5 后台 chrome es5/es6 -》 nodejs
+结构赋值 跟后面的结构一样就可以
+
+json  {key对应后面的key}
+key - value
+
+jquery ->bind 绑定事件  addevent
+
+bind -》 call
+任何函数都可以用 call 调用自己 call 的第一个参数 就是 函数的this 第二个参数之后就是函数的行参
+bind es5
+
+ 任何函数都可以用 bind 调用自己 bind 的第一个参数 就是 函数的this 第二个参数之后就是函数的行参 但是不会调用自己
+
+es6 之前的一个状态
+类  小弟
+原型 prototype 方法
+原型链 __proto__
+
+window object - array  - [1,2,3].toString()
+						number
+
+aaa.prototype = new bbb();
+
+你可以通过类 找到其原型
+
+
+世界 —— 人类 - 白种人 - 手 脑子 吃
+				 - 黄种人
+				 - 黑种人
+     
+	  —— 动物 - 爬行动物 - 脚
+				 - 飞行动物 - 翅膀
+
+
+window  - string - substring／indexof
+        - number - tostring
+        - function - call／bind
+    		- array   - concat join 
+			  。。。。
+
+constructor 这个方法能精准的告诉 你是什么类
+Object.prototype.toString.call
+bind
+可以使所有的方法 通用
+
+class 名字{
+	constructor(){
+
+   }
+
+}
+
+继承 
+爸爸 儿子
+儿子 -》 爸爸
+爸爸财产会影响到儿子的继承
+儿子财产 不会影响
+
+
+
+1.{}块状 块级作用域 可以解决 密封空间问题
+选项卡
+
+2.  结构赋值 - 模式匹配 数组 和 json
+2.1 解析接口
+2.2 json 使用结构赋值 
+2.3 结构赋值 函数
+2.4 bind 使用
+
+3. 面向对象
+类
+原型 
+原型链
+es6 的 class 
+继承 extends
+super
+es6 jquery
+es6 面向对象的选项卡
+
+
+jquery
+$(‘.div’).addClass();
+$(‘#div’).removeClass();
+$(‘div’).bind(‘click’,function(){
+
+})
+来一个 class 需要原来的所有的功能 自动播放
+css({
+	‘width’:’200px’,
+	‘height’:’300px’
+
+})
+
+map
+set
+symbol
+map
+
+
+
+

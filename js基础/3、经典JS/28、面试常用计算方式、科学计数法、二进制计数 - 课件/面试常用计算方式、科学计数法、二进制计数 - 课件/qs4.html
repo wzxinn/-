@@ -1,0 +1,28 @@
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <title></title> 
+</head>
+<body>
+<div id='div1'></div>
+<script type="text/javascript">
+	
+	var b = [div1];
+
+	//remove //软删除
+	//detach //强删除
+	div1.parentNode.removeChild(div1);
+	//alert(b);
+	b[0].style.cssText = 'background:black;width:200px;height:200px';
+	document.body.appendChild(b[0]);
+
+	/*
+	var a = [1,2,3];
+	var b = [a];
+	a = null;
+	*/
+	//
+</script>
+</body>
+</html>

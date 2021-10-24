@@ -1,0 +1,56 @@
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <title></title> 
+
+    <style type="text/css">
+.m{
+	width: 100px;height: 100px;background: black;
+}
+
+    </style>
+    <script type="text/javascript" src='jquery-1.9.1.min.js'></script>
+</head>
+<div id='div'></div>
+<body>
+<script type="text/javascript">
+
+function Jquery(obj){
+	this.ele = obj.charAt(0);
+	this.arr = [];
+	switch(this.ele){
+		case '.' :
+		break;
+		case '#' :
+		//alert(1);
+		//#div
+		//div
+		this.arr.push(document.getElementById(obj.substring(1)));
+		//console.log(this.arr);
+		break;
+		default:
+		break;
+	}
+};
+Jquery.prototype = {
+	'addClass':function(s){
+
+		this.arr[0].className = s;
+		//console.log(this.arr)
+	}
+}
+
+function $(string){
+	return new Jquery(string);
+};
+
+
+$('.div').addClass('m');
+//#
+//.
+//标签
+
+</script>
+</body>
+</html>

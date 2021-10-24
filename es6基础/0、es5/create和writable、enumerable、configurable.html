@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+</head>
+
+<body>
+    <script type="text/javascript">
+
+        /*
+            Object.create
+            创建一个具有指定原型并且可以选择性的包含指定属性的对象
+            如果不想指定原型就放入一个 null
+        
+        */
+
+        /*
+            //最基础的一个create
+            var a = Object.create(null);
+            console.log(a)
+        */
+        function leo() {
+
+        };
+
+        function leo2() {
+
+        };
+        //定义leo2的原型f值为30
+        leo2.prototype.f = 30;
+        //给leo赋予一个新的原型,类似继承
+        leo.prototype = Object.create(leo2.prototype);
+        console.log(new leo().f);
+        
+        //引用，用leo2的原型覆盖leo的原型，修改子对象会影响父对象
+        //leo.prototype = new leo2();//和下面的语句是一样的
+        // leo.prototype = leo2.prototype;
+        leo.prototype.c = 5;
+        //查看父对象是否被修改
+        console.log(new leo2().c);
+
+/////////////////////////////////////////////////////////////////////
+        var o = Object.create(null,{
+            a:{
+                //a的值
+                'value':20,
+                //内容是否能修改
+                'writable':true,
+                //是否允许被枚举（for in，for of之类的枚举）
+                'enumerable':true,
+                //是否允许被删除
+                'configurable':false
+            }
+        });
+        //测试writable
+            //o.a = 30;
+            //console.log(o)
+        /*
+            //enumerable测试
+            for(var i in o){
+                console.log(i)
+            }
+        */
+        //configurable测试
+            delete o.a;
+            console.log(o)
+
+    </script>
+</body>
+
+</html>

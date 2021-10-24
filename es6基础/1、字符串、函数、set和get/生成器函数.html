@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style type="text/css">
+		div {
+			display: none;
+			width: 200px;
+			height: 200px;
+			background: #ccc;
+		}
+
+		div:first-of-type {
+			display: block;
+		}
+	</style>
+</head>
+
+<body>
+
+	<script type="text/javascript">
+		/*
+			生成器函数的基本写法
+			function* 函数名(){
+			}
+			调用生成器函数不会运行内部的代码段，只有在调用时加上.next()才会执行。
+			生成器函数可以有多个返回值
+
+		*/
+//eg basic
+		/*
+		function* show() {
+			alert(1);
+		};
+		show().next();
+		*/
+	
+//eg yield
+	/*
+	function* show(){
+		yield ()=>{
+			alert(1);
+		}
+	};
+	console.log(show().next().value());
+	*/
+	function* show(){
+		yield ()=>{
+			console.log(1)
+		}
+
+		yield function(){
+			console.log(2);
+		}
+		yield ()=>{
+			document.body.style.background = 'black';
+		}
+	};
+
+	var k = show();
+	// k.next().value();
+	// k.next().value();
+	// k.next().value();
+	document.onclick = x =>{
+		k.next().value();
+	}
+
+	</script>
+</body>
+
+</html>

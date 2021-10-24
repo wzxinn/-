@@ -1,0 +1,30 @@
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <title></title> 
+    <style type="text/css">
+#div1{width: 200px;height: 200px;background: red; float: left;} 
+#div2{width:300px;height: 300px;background: yellow;float: left;}  	
+#div3{
+	width: 200px;height: 200px;background: green;float: left;
+}
+
+    </style>
+</head>
+<body>
+	<div id='outNode'>
+		<div id='div1'></div>
+		<div id='div2'></div>
+
+	</div>
+	<script type="text/javascript">
+		var oDiv = document.createElement('div');
+		oDiv.id = 'div3';
+		//outNode.appendChild(oDiv)
+		outNode.insertBefore(oDiv,div1);
+
+
+	</script>
+</body>
+</html>

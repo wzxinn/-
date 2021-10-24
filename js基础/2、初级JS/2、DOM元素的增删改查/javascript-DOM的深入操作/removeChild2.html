@@ -1,0 +1,28 @@
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <title></title> 
+</head>
+<body>
+	<div id='outNode'>
+		<span>
+			11111
+		</span>
+		<span id='oSpan'>
+			22222
+		</span>
+	</div>
+<script type="text/javascript">
+	//outNode.removeChild(oSpan);
+	var allSpan = document.getElementsByTagName('span');
+	console.log(allSpan);
+	for(var i = 0;i < 2;i ++){
+		//i = 0 , i = 1;
+		outNode.removeChild(allSpan[0])
+	}
+	//outNode.removeChild(allSpan);
+	//outNode.removeChild(sp2);
+</script>
+</body>
+</html>

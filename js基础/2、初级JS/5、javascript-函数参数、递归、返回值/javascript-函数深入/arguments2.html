@@ -1,0 +1,39 @@
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <title></title> 
+</head>
+<body>
+	<script type="text/javascript">
+		//任何函数里面都有arguments
+/*
+		var arr = [1,2,3];
+		arr.push(10);	
+		console.log(arr)
+*/
+		function leo(){
+
+			//arguments = ['div','我现在用的是arguments','red','500px','300px']
+			var oNode = document.createElement(arguments[0]);
+			oNode.innerHTML = arguments[1];
+			oNode.style.background = arguments[2];
+			oNode.style.width = arguments[3];
+			oNode.style.height = arguments[4];
+			//arguments.push(10)
+			//console.log(arguments[2])
+			//['1',2,3]
+			document.body.appendChild(oNode)
+			
+		};
+		
+		leo('div','我现在用的是arguments','red','500px','300px');
+
+		leo('span','我现在用的是arguments-span','green','100px','200px');
+		leo('p','我现在用的是arguments-p','pink','200px','300px');
+		
+
+
+	</script>
+</body>
+</html>

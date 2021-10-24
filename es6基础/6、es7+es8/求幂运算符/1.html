@@ -1,0 +1,34 @@
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <title></title> 
+</head>
+<body>
+	<script type="text/javascript">
+
+		/*
+			求幂运算符（**）
+			js本身有bug  精度问题
+			1.1+2.2 !=3.3 
+			3的3次幂  3*3*3 
+			3**3          == 27
+			效果同
+			Math.pow(3,3) == 27
+			可以 **= 快捷运算
+			负的几次幂 怎么算
+			5的负2次幂
+			5的2次幂 / 1
+			25/1 = 0.04
+			5*5*5 = 125/1
+			有理数的偶数次幂一定是正数
+		*/
+		let a = 2;
+		//底数 **= 指数
+		console.log(a **= 3);
+		//如果 底数是0 负数的幂数出现 Infinity
+		console.log(0**-3);
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+1.如果 JS是地球的话 ， window就是空气.
+谁离开window都活不下去。
+
+window可以省略
+
+window.alert(1);
+window.a();
+
+大家一般只说 alert(1); a();
+
+window是全局的（最大的最外面的） 所以谁都可以使用
+
+alert();
+
+浏览器的可视高度
+window.innerHeight
+浏览器的可视宽度
+window.innerWidth
+
+浏览器离屏幕左边的距离
+window.screenLeft
+浏览器离屏幕上边的距离
+window.screenTop
+
+window有两种定时器
+
+延时定时器 - 只执行一次
+window.setTimeout(fn,1000);
+window.clearTimeout
+
+1000毫秒 = 1秒
+
+轮循定时器 - 不会停的 
+window.setInterval(fn,1000);
+window.clearInterval
+
+参数
+
+传参数
+
+open 打开一个新页面
+
+参数 就是页面的地址
+
+close
+
+关闭当前页面
+
+window.window
+
+window下面有无限的window
+
+window
+this
+self
+top
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

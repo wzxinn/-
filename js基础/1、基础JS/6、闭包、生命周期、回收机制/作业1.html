@@ -1,0 +1,48 @@
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <title></title> 
+    <style type="text/css">
+*{margin: 0;padding: 0;}
+#myDiv{width: 100px;height: 100px;background: black;}
+
+    </style>
+</head>
+<body>
+	<div id='myDiv'></div>
+	<script>
+		var myDiv = document.getElementById('myDiv'),
+			width = 100,height = 100,
+			timer = null;
+		myDiv.onclick = function(){
+			clearInterval(timer);
+			timer = setInterval(function(){
+				if(width == innerWidth){
+				}
+				else{
+					width = width + 1;
+				};
+
+				if(height == innerHeight){
+
+				}
+				else{
+					height = height + 1;
+				}
+				
+				
+
+
+				myDiv.style.width = width + 'px';
+				myDiv.style.height = height + 'px';
+
+
+
+			},3);
+		};
+
+
+	</script>
+</body>
+</html>

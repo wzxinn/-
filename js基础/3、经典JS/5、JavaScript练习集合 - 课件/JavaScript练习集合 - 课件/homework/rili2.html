@@ -1,0 +1,136 @@
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <title></title> 
+    <style type="text/css">
+*{margin: 0;padding: 0;list-style: none;}
+#rili{float: left;border: 1px solid black;
+width: 280px;}
+#n{
+	width: 100%;height: 20px;
+	line-height: 20px;text-align: center;
+}
+.pr{float: left;cursor: pointer;}
+.nt{float: right;cursor: pointer;}
+#l{
+	width: 100%;height: 20px;line-height: 20px;float: left;
+}
+#l span{float: left;width: 40px;height: 100%;text-align: center;line-height: 20px;}
+#all li{
+	float: left;width: 40px;height: 40px;text-align: center;line-height: 40px;
+}
+#all .red{
+	color: red;
+}
+
+    </style>
+</head>
+<body>
+<!--
+<div id='rili'>
+	<div id='n'><span class='pr'>prev</span>2016年9月30日<span class='nt'>next</span></div>
+	<div id='l'>
+		<span>一</span>
+		<span>二</span>
+		<span>三</span>
+		<span>四</span>
+		<span>五</span>
+		<span style='color:red'>六</span>
+		<span style='color:red'>日</span>
+	</div>
+	<ul id='all'>
+	</ul>
+</div>
+-->
+<script type="text/javascript">
+	
+	var innerHtml = [
+		"<div id='rili'>",
+			"<div id='n'><span class='pr'>prev</span><span id='year'>2016</span>年<span id='Month'>9</span>月<span id='dayNode'>30</span>日<span class='nt'>next</span></div>",
+			"<div id='l'>",
+				"<span>一</span>",
+				"<span>二</span>",
+				"<span>三</span>",
+				"<span>四</span>",
+				"<span>五</span>",
+				"<span style='color:red'>六</span>",
+				"<span style='color:red'>日</span>",
+			"</div>",
+			"<ul id='all'>",
+			"</ul>",
+		"</div>"
+	].join('');
+
+
+	document.body.innerHTML = innerHtml;
+
+	var oDate = new Date();
+	var NowMonth = oDate.getMonth();
+	var NowYear = oDate.getFullYear();
+	var NowDays = oDate.getDate();
+
+	year.innerHTML = NowYear;
+	Month.innerHTML=NowMonth+1;
+	dayNode.innerHTML=NowDays;
+
+
+
+
+	//alert(oDate.getDay());
+	oDate.setMonth(9);
+	//10  1 - 30 || 31
+
+
+
+	//0 lastDay   
+	oDate.setDate(0);
+	var allDate = oDate.getDate();
+
+
+	oDate.setMonth(8);
+	oDate.setDate(1);
+
+	function toDay(Num){
+		return Num==0?7:Num;
+	}
+	var getDay = toDay(oDate.getDay());
+
+	for(var i = 0;i < getDay-1;i++){
+		var oLi = document.createElement('li');
+		all.appendChild(oLi);
+	}
+
+
+	//oDate.setMonth
+	for(var i = 0;i < allDate;i++){
+		var oLi = document.createElement('li');
+	
+		//            5  6
+		//0 1 2 3  4  5  6
+		//7 8 9 10 11 12 13
+		//14151617 18 19 20
+		
+
+		// 5  6  12  13  19 20
+		/*
+
+		if(i%5==0 || i%6==0){
+			oLi.className = 'red';
+		}
+		*/
+		oLi.innerHTML = i+1;
+		all.appendChild(oLi);
+	}
+
+	for(var i=0;i < all.children.length;i++){
+		if(i%7 == 5 || i%7 ==6){
+			all.children[i].className = 'red';
+		}
+	}
+	//alert(allDate);
+	//alert(innerHtml);
+
+</script>
+</body>
+</html>

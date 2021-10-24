@@ -1,0 +1,65 @@
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <title></title> 
+</head>
+<body>
+<script type="text/javascript">
+	
+
+
+function NewTab(opt){
+	//把opt 变成私有属性
+	this.opt = opt;
+	//alert(this.opt.isCreate);
+	this.opt.isCreate?this.CreateElement():this.unCreate();
+
+};
+NewTab.prototype = {
+	'CreateElement':function(){
+		alert('1')
+	},
+	'unCreate':function(){
+		alert('2')
+	}
+}
+
+new NewTab({
+
+	isCreate:true,
+	CreateNode:{
+		outerNode:'tabNode/DIV',
+		length:8,
+		topNodeCos:'INPUT/DIV',
+		topNodeStyle:{'width':'100px','height':'50px'},
+		topNodeVal:['嘻嘻','哈哈','嘻嘻','哈哈'],
+		bottomNodeVal:['嘻嘻','哈哈','嘻嘻','哈哈']
+	}
+})
+
+
+/*
+
+{
+	isCreate:true/false,
+	CreateNode:{
+		outerNode:’tabNode/DIV’
+		length:9,
+		topNodeCos:’INPUT/DIV’,
+		topNodeStyle:{‘width’:’100px’,’height’:’50px’},
+		topNodeVal:[‘嘻嘻’,’哈哈’,‘嘻嘻’,’哈哈’…],
+		bottomNodeVal:[‘嘻嘻’,’哈哈’,‘嘻嘻’,’哈哈’…]
+	},
+	tabNodeName:,
+	nodeToClass:’lll/ooo’,
+     activeTopClass:’active’,
+	isInterval:true/false,
+	IntervalTime:2000
+}
+*/
+
+
+</script>
+</body>
+</html>

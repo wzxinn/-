@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<link href="style.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+#pingfen .cg {background:url(star.gif) no-repeat 0 -29px; }
+</style>
+
+</head>
+
+<body>
+<div id="pingfen">
+	<ul>
+    	<li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>
+<script type="text/javascript">
+	var allLi = pingfen.getElementsByTagName('li');
+	for(var i = 0;i < allLi.length;i++){
+		allLi[i].index = i;
+		allLi[i].onmouseover =function(){
+			for(var i =0;i<allLi.length;i++){
+				allLi[i].className='';
+			}
+			for(var i =0;i<=this.index;i++){
+				allLi[i].className = 'cg';
+			}
+			//this.className = 'cg';
+		}
+	}
+</script>
+</body>
+</html>

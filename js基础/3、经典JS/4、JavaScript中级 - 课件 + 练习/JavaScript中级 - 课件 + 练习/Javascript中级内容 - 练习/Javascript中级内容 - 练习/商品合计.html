@@ -1,0 +1,184 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+</head>
+
+<body>
+
+<ul id="list">
+	<li>
+  	<input type="button" value="-" />
+    <strong>0</strong>
+  	<input type="button" value="+" />
+    单价：<em>12.5元</em>
+    小计：<span>0元</span>
+  </li>
+	<li>
+  	<input type="button" value="-" />
+    <strong>0</strong>
+  	<input type="button" value="+" />
+    单价：<em>10.5元</em>
+    小计：<span>0元</span>
+  </li>
+	<li>
+  	<input type="button" value="-" />
+    <strong>0</strong>
+  	<input type="button" value="+" />
+    单价：<em>8.5元</em>
+    小计：<span>0元</span>
+  </li>
+	<li>
+  	<input type="button" value="-" />
+    <strong>0</strong>
+  	<input type="button" value="+" />
+    单价：<em>8元</em>
+    小计：<span>0元</span>
+  </li>
+	<li>
+  	<input type="button" value="-" />
+    <strong>0</strong>
+  	<input type="button" value="+" />
+    单价：<em>14.5元</em>
+    小计：<span>0元</span>
+  </li>
+</ul>
+
+<p>
+商品合计共：<span id='span'>0</span>件，共花费了：<span id='y'>0</span>元<br />
+其中最贵的商品单价是：<span id='zuiguide'>0</span>元
+</p>
+<script type="text/javascript">
+  
+  var allLi = document.getElementsByTagName('li');
+  var addIput = document.getElementsByTagName('input');
+  var allStrong = document.getElementsByTagName('strong');
+  var add = [];
+  var remove = [];
+  var allEm = document.getElementsByTagName('em');
+  var allSpan = list.getElementsByTagName('span');
+
+  var allShopping = 0;
+  var allMoney = 0;
+  var arrMoney = [];
+
+
+  for(var i = 0;i < addIput.length;i++){
+    //0
+    //1%2 == 1
+    //2 
+    //3%2 == 1
+    if(i%2==1){
+      add.push(addIput[i]);
+    }
+    else{
+      remove.push(addIput[i])
+    }
+  };
+  //remove input
+  for(var i = 0;i < remove.length;i++){
+    remove[i].index = i;
+    remove[i].onclick = function(){
+      var val = allStrong[this.index].innerHTML;
+      //val-1<0?0:val--;
+      if(val - 1 < 0){
+        val = 0;
+      }
+      else{
+        val--;
+      }
+
+      allStrong[this.index].innerHTML = val;
+
+      var needNum = Number(allEm[this.index].innerHTML.replace('元',''));
+      //alert(val * needNum);
+      allSpan[this.index].innerHTML = val * needNum + '元';
+
+
+
+      //计算总数
+      allShopping = 0;
+      for(var i = 0;i < allStrong.length;i++){
+
+        //i=0; all[0] =6 
+        //shop += 6
+
+        //i = 1; all[1]=2;
+        //6+=2    8
+
+        //i = 2 all[2]=2
+        //8+=2
+        allShopping+=Number(allStrong[i].innerHTML);
+      };
+
+      span.innerHTML = allShopping;
+
+      allMoney = 0;
+      for(var i = 0; i < allSpan.length;i++){
+        //console.log(allSpan[i].//innerHTML.replace('元',''))
+        allMoney+=Number(allSpan[i].innerHTML.replace('元',''));
+      }
+
+      y.innerHTML = allMoney;
+
+    }
+  }
+
+
+
+  //add iput
+  for(var i = 0;i < add.length;i++){
+    add[i].index = i;
+    add[i].onclick= function(){
+      var val = allStrong[this.index].innerHTML;
+      val++;
+     // alert(val)
+      allStrong[this.index].innerHTML = val;
+
+      var needNum = Number(allEm[this.index].innerHTML.replace('元',''));
+      //alert(val * needNum);
+      allSpan[this.index].innerHTML = val * needNum + '元';
+
+
+      //计算总数
+      allShopping = 0;
+      for(var i = 0;i < allStrong.length;i++){
+
+        //i=0; all[0] =6 
+        //shop += 6
+
+        //i = 1; all[1]=2;
+        //6+=2    8
+
+        //i = 2 all[2]=2
+        //8+=2
+        allShopping+=Number(allStrong[i].innerHTML);
+      };
+
+      span.innerHTML = allShopping;
+
+
+      allMoney = 0;
+      arrMoney = [];
+      for(var i = 0; i < allSpan.length;i++){
+        //i = 0; allSpan[0].25
+        //0 += 25 allMoney = 25;
+        //i = 1; allSpan[1].0
+        //25+=0;allMoney = 25;
+        //i = 2; allSpan[2].8.5
+        //25+=8.5  allMoney = 33.5
+        //...
+        arrMoney.push(isNaN(Number(allSpan[i].innerHTML.replace('元',''))/Number(allStrong[i].innerHTML))?0:Number(allSpan[i].innerHTML.replace('元',''))/Number(allStrong[i].innerHTML));
+        allMoney+=Number(allSpan[i].innerHTML.replace('元',''));
+      }
+      y.innerHTML = allMoney;
+      
+      zuiguide.innerHTML = arrMoney.sort(function(x,y){ return y-x})[0];
+      
+    }
+  }
+</script>
+</body>
+</html>

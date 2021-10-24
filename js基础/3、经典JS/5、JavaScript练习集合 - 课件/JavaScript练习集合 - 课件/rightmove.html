@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+		#box{
+			    width: 818px;
+				height: 260px;
+				border: 10px solid #c0c0c0;
+				padding: 10px;
+				box-sizing: border-box;
+		}
+			#neirong{
+				width: 320px;
+				height: 220px;
+				background: #efefd6;
+				float: left;
+				overflow:auto;
+				border: 1px dotted #000;
+				/*outline:none;*/
+			}
+			#btn{
+				width: 120px;
+				height: 40px;
+				text-align: center;
+				line-height: 40px;
+				background: #f76300;
+				color:#fff;
+				margin-left: 7px;
+				
+			}
+			#box_right{
+				width: 318px;
+				height: 220px;
+				background: #63eff7;
+				float: left;
+				margin-left: 15px;
+				word-wrap: break-word;
+				overflow:auto;
+				border: 1px dotted #000;
+			}
+			
+			#box_left{
+				width: 120px;
+				height: 200px;
+			    box-sizing: border-box;
+				float: left;
+			}
+			#num{
+				margin-top: 10px;
+				width: 120px;
+				height: 30px;
+				text-align: center;
+				line-height: 30px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<div id="neirong" contenteditable="true" ></div>
+			<div id="box_left">
+				<div id="btn">把文字右移</div>
+				<div id="num">0/0</div>
+			</div>
+			<div id="box_right"></div>
+		</div>
+	</body>
+	<script type="text/javascript">
+btn.onclick=function(){
+	box_right.innerHTML="";
+	var youshu=neirong.innerHTML;
+	var zuoshu=-1;
+	       num.innerHTML= ++zuoshu + '/' + youshu.length;
+		   neirong.innerHTML = youshu.replace(/./g,function(i){
+			return '<span>' + i + '</span>';
+		});
+		 var ospan=neirong.getElementsByTagName('span');
+		 var tim=null;
+		 clearInterval(tim);
+		if(zuoshu==youshu.length){
+			clearInterval(tim);
+			}else{
+			tim=setInterval(function(){
+				num.innerHTML= ++zuoshu + '/' + youshu.length;
+				box_right.innerHTML+= ospan[0].innerHTML;
+				neirong.removeChild(ospan[0]);
+				
+			if(zuoshu==youshu.length){
+					clearInterval(tim);
+					
+				}
+		    },30)
+		}
+}
+	</script>
+</html>

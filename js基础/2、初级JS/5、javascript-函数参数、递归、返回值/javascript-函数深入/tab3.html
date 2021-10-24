@@ -1,0 +1,42 @@
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <title></title>
+    <style type="text/css">
+div{width: 200px;height: 200px;background: #ccc;display: none;}
+div.show{display: block;}
+.active{background: red;}   	
+
+
+    </style> 
+</head>
+<body>
+	<input type="button" class='active' name="" value='aa'>
+	<input type="button" name="" value='bb'>
+	<input type="button" name="" value='cc'>
+	<div class='show'>我是第一个div</div>
+	<div>我是第二个div</div>
+	<div>我是第三个div</div>
+	<script type="text/javascript">
+		var allInput = document.getElementsByTagName('input');
+		var allDiv =  document.getElementsByTagName('div');
+
+
+		for(var i = 0;i < allInput.length;i++){
+			allInput[i].setAttribute('index',i);
+			allInput[i].onclick = function(){
+				for(var i = 0;i < allInput.length;i++){
+					allInput[i].className = '';
+					allDiv[i].className = '';
+				};
+				this.className = 'active';
+				allDiv[this.getAttribute('index')].className = 'show';
+			};
+		};
+
+
+
+	</script>
+</body>
+</html>

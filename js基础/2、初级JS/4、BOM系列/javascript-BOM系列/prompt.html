@@ -1,0 +1,28 @@
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <title></title> 
+</head>
+<body>
+	<div id='div1'>go</div>
+	<script type="text/javascript">
+		div1.onclick = function(){
+			if(prompt('您觉得这个世界上最帅的人是谁?')!='李游'){
+				//alert('我觉得你说的有那么一点问题')
+				if(!confirm('你确定你这么说是对的么？')){
+					alert('我觉得你承认错误的态度比较好')
+				}
+				else{
+					alert('好吧 谁让你花钱买课了～～～ 你也挺帅的～～')
+				}
+			}
+			else{
+				alert('哥们,你真有眼光!')
+			}
+		};
+
+		//console.log(window.prompt('请您输入密码'));
+	</script>
+</body>
+</html>

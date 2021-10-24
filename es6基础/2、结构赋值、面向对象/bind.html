@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style type="text/css">
+		input.active {
+			background: red;
+		}
+	</style>
+</head>
+
+<body>
+
+
+
+	<script type="text/javascript">
+
+		/*
+		 任何函数都可以用 bind 调用自己 bind 的第一个参数 就是 函数的this 第二个参数之后就是函数的行参 但是不会调用自己
+		 如果需要调用，要在bind的参数后再加一对括号
+		 调用的括号中也能传参，传递的参数会跟在bind里面的参数后面
+		*/
+		function show(x, y, z) {
+			console.log(x, y)
+		};
+		show.bind(1,2,1)();
+		//show.bind(1,2)(1);
+	</script>
+</body>
+
+</html>

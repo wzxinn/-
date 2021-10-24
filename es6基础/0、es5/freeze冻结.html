@@ -1,0 +1,32 @@
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <title></title> 
+</head>
+<body>
+<script type="text/javascript">
+/*
+
+Object.freeze(); 结冰、冻结（财产）
+1.configurable 所有的都是 false
+2.writable 所有的都是 false
+3.对象不可以拓展，不能往里面放入新的属性。
+
+一旦从新赋值 freeze的效果失效
+
+*/
+var json = {
+	a:20,
+	b:30
+};
+
+Object.freeze(json);
+json.a =30;
+delete json.b;
+json.c = 40;
+console.log(json)
+
+</script>
+</body>
+</html>

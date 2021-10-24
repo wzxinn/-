@@ -1,0 +1,62 @@
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <title></title> 
+</head>
+<body>
+<script type="text/javascript">
+/*
+	Object.defineProperty();
+	支持三个参数  -->  对象，属性，修改或者添加的值
+	该方法会直接在一个对象上定义一个新属性，或者修改一个对象的现有属性，并且返回这个对象
+*/
+
+//基础使用
+	var json={};
+	Object.defineProperty(json,'key',{
+		value:'leo'
+	})
+	//console.log(json);
+
+	function leo(){
+
+	};
+//深入拓展
+	/*leo.prototype={
+		'hehe':function(){
+			alert(1);
+		}
+	}
+	*/
+	//函数对象的原型可以当作对象的现有属性来修改
+	Object.defineProperty(leo.prototype,'hehe',{
+		value:function(){
+			alert(1);
+		},
+		writable:false
+	});
+
+	leo.prototype.hehe = function(){
+		alert(2);
+	};
+	new leo().hehe();
+
+
+//对象的四个特殊的属性
+	/*
+	//不允许修改内容
+	var json = {'key':'leo'};
+	Object.defineProperty(json,'key',{
+		//如果有就会修改，没有就会添加
+		'value':'bue'
+		//writable:false
+	});
+
+	json.key = 'hehe';
+	console.log(json.key)
+	*/
+
+</script>
+</body>
+</html>

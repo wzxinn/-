@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<style>
+#div1{ width:180px; height:40px; border:1px solid black ; position:absolute; left:50%; top:50%; margin:-20px  0 0 -50px; font:12px/40px Arial, Helvetica, sans-serif; background:#999; overflow:hidden;filter:alpha(opacity:0);opacity:0; display:none}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Untitled Document</title>
+<script>
+window.onload=function()
+{
+ var oBt=document.getElementsByTagName('input');
+ var oDiv=document.getElementById('div1');
+ timer=null
+ 
+ oBt[1].onkeydown=function(ev)
+	 {
+		 var oEvent=ev||event;
+		 if(oEvent.keyCode<48 || oEvent.keyCode>57)
+		{
+			return false;
+		}
+		 
+	 };
+ 
+ oBt[0].onclick=function()
+ {
+	oBt[1].value-=1 
+	if(oBt[1].value<0)
+	{
+		oBt[1].value=0
+		oDiv.style.display='block'
+		startMove(oDiv,{opacity:100})
+	}
+ };
+ 
+ 
+  oBt[2].onclick=function()
+ {
+	oBt[1].value=parseInt(oBt[1].value)+1;
+	if(oBt[1].value>0)
+	{
+		startMove(oDiv,{opacity:0})
+		setTimeout(function()
+		{
+			oDiv.style.display='none'
+		},300)
+	 };
+	 
+ 
+ };
+ 
+
+ 
+function getStyle(obj, attr)
+{
+	if(obj.currentStyle)
+	{
+		return obj.currentStyle[attr];
+	}
+	else
+	{
+		return getComputedStyle(obj, false)[attr];
+	}
+}
+
+function startMove(obj,json,fu)
+{
+	clearInterval(obj.timer);
+	obj.timer=setInterval(function (){
+									
+		var bStop = true; 
+		for(var attr in json)
+		{
+		
+			var iCur=0;
+			if(attr=='opacity')
+			{
+				iCur=parseInt(parseFloat(getStyle(obj, attr))*100);
+			}
+			else
+			{
+				iCur=parseInt(getStyle(obj, attr));
+			}
+			
+	
+			var iSpeed=(json[attr]-iCur)/8;
+			iSpeed=iSpeed>0?Math.ceil(iSpeed):Math.floor(iSpeed);
+			
+
+			
+			if(iCur!=json[attr])
+			{
+				bStop = false;	
+			}
+			if(attr=='opacity')
+			{
+				obj.style.filter='alpha(opacity:'+(iCur+iSpeed)+')';
+				obj.style.opacity=(iCur+iSpeed)/100;
+			}
+			else
+			{
+				obj.style[attr]=iCur+iSpeed+'px';
+			}
+		}
+		if(bStop)
+		{
+			clearInterval(obj.timer);
+			if(fu)
+			{
+				fu()	
+			}	
+		}
+		
+	}, 30)
+}
+}
+
+</script>
+</head>
+
+<body>
+<input type="button" value="-" />
+<input type="text" value="0"  style="text-align:center; width:30px"/>
+<input type="button" value="+" />
+<div id="div1">对不起，您输入得内容不能小于0</div>
+</body>
+</html>

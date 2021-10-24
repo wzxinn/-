@@ -1,0 +1,28 @@
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <title></title> 
+</head>
+<body>
+	<script type="text/javascript">
+		/*
+			在任何函数作用域中 如果使用es6的结构赋值 就不要使用 严格模式  不然会报错
+		*/
+		//函数作用域的demo，子级能取父级，父级不能取子级
+		function leo(){
+			var a = 10;
+
+			function son(){
+				console.log(a);
+				var c = 10;
+			};
+			son();
+			//console.log(c);
+		};
+		leo();
+		console.log(a)
+
+	</script>
+</body>
+</html>
