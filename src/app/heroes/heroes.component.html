@@ -1,0 +1,5 @@
+<h2>My Heroes</h2>
+<ul *ngFor = "let tab of tabs">
+    {{tab.title}}
+    <li *ngFor = "let region of tab.endpoints">{{region.name}}</li>
+</ul>
